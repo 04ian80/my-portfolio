@@ -1,0 +1,7 @@
+import styled from 'styled-components';
+
+export const HomeContainer = styled.div`
+  height: 200vh;
+
+  background-color: #edddd4;
+`;
