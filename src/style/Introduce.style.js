@@ -11,6 +11,10 @@ export const ProfileImg = styled.img`
 `;
 
 export const Introduce = styled.span`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: flex-end;
   font-size: 14px;
   font-weight: 300;
 `;
@@ -26,6 +30,7 @@ export const MainTitle = styled.div`
   color: #1a1a1a;
   font-size: 3em;
   font-weight: 300;
+  flex-shrink: 0;
 
   & > span:nth-child(2) {
     opacity: 0.7;
