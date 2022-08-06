@@ -5,7 +5,7 @@ import { Introduce } from './Introduce';
 
 function Home() {
   return (
-    <H.HomeContainer>
+    <H.HomeContainer style={{ position: 'relative' }}>
       <Introduce />
       <SideBar />
     </H.HomeContainer>

@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 export const MainHeader = styled.div`
   @import 'https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400';
+
   display: flex;
   justify-content: space-between;
+  padding-top: 2em;
 `;
 
 export const ProfileImg = styled.img`

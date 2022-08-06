@@ -1,44 +1,44 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export const Container = styled.div`
   position: fixed;
-  left: 0;
-`;
-
-export const ContactBox = styled.div`
-  position: fixed;
   display: flex;
-  bottom: 0;
-  margin: 1em;
-  background-color: #d3dee2;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-
-  & > span {
-    padding-right: 5px;
-  }
+  top: 0;
+  left: 0;
+  right: 0;
 `;
 
 export const Nav = styled.nav`
-  position: fixed;
-  top: 0;
+  background-color: #fff;
   margin: 1em;
-  background-color: #eee;
 `;
 
 export const NavList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
   padding: 0;
+  margin: 0;
 
   & > *:not(:last-child) {
-    margin-bottom: 2em;
+    padding-right: 1em;
   }
 `;
 
 export const NavLink = styled(Link)`
   text-decoration: none;
   color: black;
+`;
+
+export const ContactBox = styled.div`
+  position: fixed;
+  right: 1em;
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  background-color: #eee;
+
+  & > *:not(:last-child) {
+    padding-right: 15px;
+  }
 `;
