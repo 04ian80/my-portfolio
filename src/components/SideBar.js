@@ -19,9 +19,9 @@ function SideBar() {
         </C.NavList>
       </C.Nav>
       <C.ContactBox>
-        <SVG name='github' width='25px' height='25px' color='#6E6E6E'></SVG>
-        <SVG name='velog' width='25px' height='25px' color='#6E6E6E'></SVG>
-        <SVG name='gmail' width='25px' height='25px' color='#6E6E6E'></SVG>
+        <SVG name='github' width='20px' height='20px' color='#6E6E6E'></SVG>
+        <SVG name='velog' width='20px' height='20px' color='#6E6E6E'></SVG>
+        <SVG name='gmail' width='20px' height='20px' color='#6E6E6E'></SVG>
       </C.ContactBox>
     </C.Container>
   );

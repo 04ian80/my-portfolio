@@ -5,11 +5,11 @@ export const MainHeader = styled.div`
 
   display: flex;
   justify-content: space-between;
-  padding-top: 2em;
+  padding-top: 3em;
 `;
 
 export const ProfileImg = styled.img`
-  padding: 1em 0 1em 7em;
+  padding: 1em;
 `;
 
 export const Introduce = styled.span`
