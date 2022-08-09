@@ -22,9 +22,27 @@ function SideBar() {
         </C.NavList>
       </C.Nav>
       <C.ContactBox>
-        <SVG name='github' width='20px' height='20px' color={iconColor}></SVG>
-        <SVG name='velog' width='20px' height='20px' color={iconColor}></SVG>
-        <SVG name='gmail' width='20px' height='20px' color={iconColor}></SVG>
+        <a
+          href='https://github.com/04ian80'
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          <SVG name='github' width='20px' height='20px' color={iconColor}></SVG>
+        </a>
+        <a
+          href='https://velog.io/@a_in'
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          <SVG name='velog' width='20px' height='20px' color={iconColor}></SVG>
+        </a>
+        <a
+          href='mailto:artnouveau0804@gmail.com'
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          <SVG name='gmail' width='20px' height='20px' color={iconColor}></SVG>
+        </a>
       </C.ContactBox>
     </C.Container>
   );
