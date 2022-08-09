@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as palette from './Variables';
 import { HashLink as Link } from 'react-router-hash-link';
 
 export const Container = styled.div`
@@ -27,14 +28,14 @@ export const NavList = styled.ul`
 
   & > *:not(:last-child)::after {
     content: '/';
-    color: #ddd;
+    color: ${palette.bgColor};
     padding-left: 1em;
   }
 `;
 
 export const NavLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: ${palette.subFontColor};
 `;
 
 export const ContactBox = styled.div`

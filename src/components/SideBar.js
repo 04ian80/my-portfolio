@@ -1,8 +1,11 @@
 import React from 'react';
 import * as C from '../style/SideBar.style';
+import * as palette from '../style/Variables';
 import { SVG } from '../icon/SVG';
 
 function SideBar() {
+  const iconColor = palette.subFontColor;
+
   return (
     <C.Container>
       <C.Nav>
@@ -19,9 +22,9 @@ function SideBar() {
         </C.NavList>
       </C.Nav>
       <C.ContactBox>
-        <SVG name='github' width='20px' height='20px' color='#6E6E6E'></SVG>
-        <SVG name='velog' width='20px' height='20px' color='#6E6E6E'></SVG>
-        <SVG name='gmail' width='20px' height='20px' color='#6E6E6E'></SVG>
+        <SVG name='github' width='20px' height='20px' color={iconColor}></SVG>
+        <SVG name='velog' width='20px' height='20px' color={iconColor}></SVG>
+        <SVG name='gmail' width='20px' height='20px' color={iconColor}></SVG>
       </C.ContactBox>
     </C.Container>
   );

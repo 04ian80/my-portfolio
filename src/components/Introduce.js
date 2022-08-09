@@ -1,19 +1,42 @@
 import React from 'react';
-// import { useState, useRef } from 'react';
+import TypeIt from 'typeit-react';
 import * as I from '../style/Introduce.style';
 
 export function Introduce() {
+  const intro = [
+    '새로운 것에 관심이 많아 배우는 것을 좋아하는',
+    '사용자 경험을 1순위로 하여 개발하는',
+    '새로운 도전에 있어서 적극적으로 즐기는',
+  ];
   return (
     <I.MainHeader id='about'>
       <I.ProfileImg src='https://via.placeholder.com/200x300' />
       <I.MainTitle>
-        <span>저는_______</span>
-        <span>종아인</span>
-        <span>입니다</span>
-        <I.Introduce>
-          <span>새로운 것에 관심이 많아 배우는 것을 좋아하는</span>
-          <span>사용자 경험을 1순위로 하여 개발하는</span>
-        </I.Introduce>
+        <span>저는</span>
+        <div>
+          <TypeIt
+            options={{ loop: true }}
+            getBeforeInit={(instance) => {
+              instance
+                .type(intro[0])
+                .pause(3000)
+                .delete('*')
+                .pause(500)
+                .type(intro[1])
+                .pause(3000)
+                .delete('*')
+                .pause(500)
+                .type(intro[2])
+                .pause(3000);
+
+              return instance;
+            }}
+          ></TypeIt>
+        </div>
+        <div>
+          <span>종아인</span>
+          <span>입니다</span>
+        </div>
       </I.MainTitle>
     </I.MainHeader>
   );
