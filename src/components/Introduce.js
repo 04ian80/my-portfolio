@@ -33,10 +33,8 @@ export function Introduce() {
             }}
           ></TypeIt>
         </div>
-        <div>
-          <span>종아인</span>
-          <span>입니다</span>
-        </div>
+        <span>종아인</span>
+        입니다
       </I.MainTitle>
     </I.MainHeader>
   );

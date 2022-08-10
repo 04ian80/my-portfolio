@@ -7,8 +7,8 @@ import { TopButton } from './TopButton';
 function Home() {
   return (
     <H.HomeContainer style={{ position: 'relative' }}>
-      <Introduce />
       <HeadBar />
+      <Introduce />
       <TopButton />
     </H.HomeContainer>
   );

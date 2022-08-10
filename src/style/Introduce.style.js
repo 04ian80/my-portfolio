@@ -21,7 +21,6 @@ export const Introduce = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // align-items: flex-end;
   font-size: 14px;
 `;
 
@@ -38,39 +37,39 @@ export const MainTitle = styled.div`
 
   & > div:nth-child(2) {
     width: 300px;
+    height: auto;
     font-size: 16px;
   }
 
-  & > div:nth-child(3) {
-    & > span:first-child {
-      opacity: 0.7;
-      background: linear-gradient(to right, #5ac8df, #dd7990);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 600;
+  & > span:nth-child(3) {
+    opacity: 0.7;
+    background: linear-gradient(to right, #5ac8df, #dd7990);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    cursor: default;
 
-      &: hover {
-        opacity: 1;
-        transition: all 0.3s ease-in-out;
-        -webkit-mask-image: linear-gradient(
-          -75deg,
-          rgba(0, 0, 0, 0.6) 30%,
-          #000 50%,
-          rgba(0, 0, 0, 0.6) 70%
-        );
+    &: hover {
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+      -webkit-mask-image: linear-gradient(
+        -75deg,
+        rgba(0, 0, 0, 0.6) 30%,
+        #000 50%,
+        rgba(0, 0, 0, 0.6) 70%
+      );
 
-        -webkit-mask-size: 200%;
-        animation: shine 2s infinite;
+      -webkit-mask-size: 200%;
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      from {
+        -webkit-mask-position: 150%;
       }
 
-      @keyframes shine {
-        from {
-          -webkit-mask-position: 150%;
-        }
-
-        to {
-          -webkit-mask-position: -50%;
-        }
+      to {
+        -webkit-mask-position: -50%;
       }
     }
   }

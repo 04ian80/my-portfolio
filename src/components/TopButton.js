@@ -42,4 +42,5 @@ const TopBtn = styled(Link)`
   color: ${palette.subFontColor};
   background-color: #fff;
   cursor: pointer;
+  z-index: 9998;
 `;

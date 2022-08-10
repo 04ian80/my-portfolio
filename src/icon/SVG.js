@@ -19,7 +19,7 @@ export const SVG = (props) => {
       xmlns='http://www.w3.org/2000/svg'
       fill={props.color}
     >
-      <title>Gmail</title>
+      <title>{props.name}</title>
       <path d={svg[props.name]} />
     </svg>
   );

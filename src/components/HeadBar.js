@@ -1,52 +1,30 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 import * as C from '../style/HeadBar.style';
-import * as palette from '../style/Variables';
 import { SVG } from '../icon/SVG';
-
-const initArg = {
-  githubColor: palette.subFontColor,
-  velogColor: palette.subFontColor,
-  gmailColor: palette.subFontColor,
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'GITHUB':
-      return {
-        ...state,
-        githubColor: palette.githubColor,
-      };
-      break;
-    case 'VELOG':
-      return {
-        ...state,
-        velogColor: palette.velogColor,
-      };
-      break;
-    case 'GMAIL':
-      return {
-        ...state,
-        gmailColor: palette.gmailColor,
-      };
-      break;
-    case 'DEFAULT':
-      return {
-        ...state,
-        githubColor: palette.subFontColor,
-        velogColor: palette.subFontColor,
-        gmailColor: palette.subFontColor,
-      };
-      break;
-    default:
-      break;
-  }
-};
+import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
+// import styled, { ThemeProvider } from 'styled-components';
 
 export const HeadBar = () => {
-  const [state, dispatch] = useReducer(reducer, initArg);
+  const [iconColor, setIconColor] = useReducer(iconColorReducer, initIconColor);
+  const [iconLocation, setIconLocation] = useState(true);
+  // const [iconLocation, setIconLocation] = useReducer(iconLocationReducer, initIconLocation);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 330) {
+        setIconLocation(true);
+      } else {
+        setIconLocation(false);
+      }
+    });
+  });
+
+  // const theme = {
+  //   iconLocate,
+  // };
 
   return (
-    <C.Container>
+    <C.Container iconLocation={iconLocation}>
       <C.Nav>
         <C.NavList>
           <C.NavLink to='/#about' smooth={true}>
@@ -60,23 +38,25 @@ export const HeadBar = () => {
           </C.NavLink>
         </C.NavList>
       </C.Nav>
-      <C.ContactBox>
+
+      {/* <ThemeProvider theme={theme}> */}
+      <C.ContactBox iconLocation={iconLocation}>
         <a
           href='https://github.com/04ian80'
           rel='noopener noreferrer'
           target='_blank'
           onMouseEnter={() => {
-            dispatch({ type: 'GITHUB' });
+            setIconColor({ type: 'GITHUB' });
           }}
           onMouseLeave={() => {
-            dispatch({ type: 'DEFAULT' });
+            setIconColor({ type: 'DEFAULT' });
           }}
         >
           <SVG
             name='github'
             width='20px'
             height='20px'
-            color={state.githubColor}
+            color={iconColor.githubColor}
           ></SVG>
         </a>
         <a
@@ -84,17 +64,17 @@ export const HeadBar = () => {
           rel='noopener noreferrer'
           target='_blank'
           onMouseEnter={() => {
-            dispatch({ type: 'VELOG' });
+            setIconColor({ type: 'VELOG' });
           }}
           onMouseLeave={() => {
-            dispatch({ type: 'DEFAULT' });
+            setIconColor({ type: 'DEFAULT' });
           }}
         >
           <SVG
             name='velog'
             width='20px'
             height='20px'
-            color={state.velogColor}
+            color={iconColor.velogColor}
           ></SVG>
         </a>
         <a
@@ -102,20 +82,21 @@ export const HeadBar = () => {
           rel='noopener noreferrer'
           target='_blank'
           onMouseEnter={() => {
-            dispatch({ type: 'GMAIL' });
+            setIconColor({ type: 'GMAIL' });
           }}
           onMouseLeave={() => {
-            dispatch({ type: 'DEFAULT' });
+            setIconColor({ type: 'DEFAULT' });
           }}
         >
           <SVG
             name='gmail'
             width='20px'
             height='20px'
-            color={state.gmailColor}
+            color={iconColor.gmailColor}
           ></SVG>
         </a>
       </C.ContactBox>
+      {/* </ThemeProvider> */}
     </C.Container>
   );
 };

@@ -2,6 +2,29 @@ import styled from 'styled-components';
 import * as palette from './Variables';
 import { HashLink as Link } from 'react-router-hash-link';
 
+const iconLocate = {
+  iconRow: `
+  top: 0em;
+  margin: 1em;
+
+  & > *:not(:last-child) {
+    padding: 0 15px 0 0
+  }
+  `,
+  iconColumn: `
+  top: 4em;
+  margin: 0;
+  flex-direction: column;
+
+  & > *:not(:last-child) {
+    padding: 0 0 15px 0;
+  }
+  `,
+  navCenter: `
+  justify-content: center;
+  `,
+};
+
 export const Container = styled.div`
   position: fixed;
   display: flex;
@@ -10,6 +33,9 @@ export const Container = styled.div`
   left: 0;
   right: 0;
   background-color: #fff;
+  z-index: 9999;
+  ${(props) => (props.iconLocation ? iconLocate.navCenter : '')};
+  // justify-content: center;
 `;
 
 export const Nav = styled.nav`
@@ -43,10 +69,16 @@ export const ContactBox = styled.div`
   right: 1em;
   display: flex;
   justify-content: center;
-  margin: 1em;
-  // background-color: #bbb;
 
-  & > *:not(:last-child) {
-    padding-right: 15px;
-  }
+  ${(props) =>
+    props.iconLocation ? iconLocate.iconColumn : iconLocate.iconRow};
+  // 330일때
+  // top: 4em;
+  // right: 0;
+  // margin: 0;
+  // flex-direction: column;
+
+  // & > *:not(:last-child) {
+  //   padding: 0 0 15px 0;
+  // }
 `;
