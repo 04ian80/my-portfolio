@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import * as C from '../style/SideBar.style';
+import * as C from '../style/HeadBar.style';
 import * as palette from '../style/Variables';
 import { SVG } from '../icon/SVG';
 
@@ -42,7 +42,7 @@ const reducer = (state, action) => {
   }
 };
 
-function SideBar() {
+export const HeadBar = () => {
   const [state, dispatch] = useReducer(reducer, initArg);
 
   return (
@@ -118,6 +118,4 @@ function SideBar() {
       </C.ContactBox>
     </C.Container>
   );
-}
-
-export default SideBar;
+};
