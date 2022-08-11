@@ -12,11 +12,10 @@ const svg = {
 export const SVG = (props) => {
   return (
     <svg
-      width={props.width ? props.width : 'auto'}
-      height={props.height ? props.height : 'auto'}
+      width={props.width ? props.width : '20px'}
+      height={props.height ? props.height : '20px'}
       role='img'
       viewBox='0 0 24 24'
-      xmlns='http://www.w3.org/2000/svg'
       fill={props.color}
     >
       <title>{props.name}</title>

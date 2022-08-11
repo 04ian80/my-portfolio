@@ -41,7 +41,6 @@ export const HeadBar = () => {
         </C.NavList>
       </C.Nav>
 
-      {/* <ThemeProvider theme={theme}> */}
       <C.ContactBox iconLocation={iconLocation}>
         <a
           href='https://github.com/04ian80'
@@ -54,12 +53,7 @@ export const HeadBar = () => {
             setIconColor({ type: 'DEFAULT' });
           }}
         >
-          <SVG
-            name='github'
-            width='20px'
-            height='20px'
-            color={iconColor.githubColor}
-          ></SVG>
+          <SVG name='github' color={iconColor.githubColor}></SVG>
         </a>
         <a
           href='https://velog.io/@a_in'
@@ -72,12 +66,7 @@ export const HeadBar = () => {
             setIconColor({ type: 'DEFAULT' });
           }}
         >
-          <SVG
-            name='velog'
-            width='20px'
-            height='20px'
-            color={iconColor.velogColor}
-          ></SVG>
+          <SVG name='velog' color={iconColor.velogColor}></SVG>
         </a>
         <a
           href='mailto:artnouveau0804@gmail.com'
@@ -90,15 +79,9 @@ export const HeadBar = () => {
             setIconColor({ type: 'DEFAULT' });
           }}
         >
-          <SVG
-            name='gmail'
-            width='20px'
-            height='20px'
-            color={iconColor.gmailColor}
-          ></SVG>
+          <SVG name='gmail' color={iconColor.gmailColor}></SVG>
         </a>
       </C.ContactBox>
-      {/* </ThemeProvider> */}
     </C.Container>
   );
 };

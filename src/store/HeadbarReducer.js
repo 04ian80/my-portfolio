@@ -39,8 +39,3 @@ export const iconColorReducer = (state, action) => {
       break;
   }
 };
-
-// iconLocation
-// export const initIconLocation = {
-
-// }
