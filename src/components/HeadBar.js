@@ -6,7 +6,9 @@ import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
 
 export const HeadBar = () => {
   const [iconColor, setIconColor] = useReducer(iconColorReducer, initIconColor);
-  const [iconLocation, setIconLocation] = useState(true);
+  const [iconLocation, setIconLocation] = useState(
+    window.innerWidth < 330 ? true : false
+  );
   // const [iconLocation, setIconLocation] = useReducer(iconLocationReducer, initIconLocation);
 
   useEffect(() => {
