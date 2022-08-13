@@ -5,9 +5,9 @@ export const MainHeader = styled.div`
   @import 'https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400';
 
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  padding-top: 3em;
+  padding-top: 4em;
   flex-shrink: 0;
   flex-wrap: wrap;
   font-weight: 300;
@@ -21,24 +21,20 @@ export const Introduce = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 14px;
 `;
 
 export const MainTitle = styled.div`
-  // display: flex;
-  justify-content: flex-start;
   align-items: center;
-  min-width: 5em;
+  min-width: 5rem;
   display: block;
-
-  padding: 1em;
+  padding: 1rem;
   color: ${palette.fontColor};
-  font-size: 3em;
+  font-size: 5rem;
 
   & > div:nth-child(2) {
-    width: 300px;
+    width: 20rem;
     height: auto;
-    font-size: 16px;
+    font-size: 2rem;
   }
 
   & > span:nth-child(3) {

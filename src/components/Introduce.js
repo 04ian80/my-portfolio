@@ -10,7 +10,7 @@ export function Introduce() {
   ];
   return (
     <I.MainHeader id='about'>
-      <I.ProfileImg src='https://via.placeholder.com/200x300' />
+      <I.ProfileImg src='https://via.placeholder.com/300x400' />
       <I.MainTitle>
         <span>저는</span>
         <div>

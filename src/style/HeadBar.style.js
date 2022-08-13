@@ -8,7 +8,7 @@ const iconLocate = {
   margin: 1em;
 
   & > *:not(:last-child) {
-    padding: 0 15px 0 0
+    padding-right: 1.3rem;
   }
   `,
   iconColumn: `
@@ -17,7 +17,7 @@ const iconLocate = {
   flex-direction: column;
 
   & > *:not(:last-child) {
-    padding: 0 0 15px 0;
+    padding-bottom: 15px;
   }
   `,
   navCenter: `
@@ -32,7 +32,7 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  background-color: #fff;
+  // background-color: #fff;
   z-index: 9999;
   ${(props) => (props.iconLocation ? iconLocate.navCenter : '')};
   // justify-content: center;
@@ -46,7 +46,7 @@ export const Nav = styled.nav`
 export const NavList = styled.ul`
   padding: 0;
   margin: 0;
-  font-size: 14px;
+  font-size: 1.4rem;
 
   & > *:not(:last-child) {
     padding-right: 1em;
@@ -72,13 +72,4 @@ export const ContactBox = styled.div`
 
   ${(props) =>
     props.iconLocation ? iconLocate.iconColumn : iconLocate.iconRow};
-  // 330일때
-  // top: 4em;
-  // right: 0;
-  // margin: 0;
-  // flex-direction: column;
-
-  // & > *:not(:last-child) {
-  //   padding: 0 0 15px 0;
-  // }
 `;
