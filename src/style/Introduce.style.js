@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import * as palette from './Variables';
+import { device } from './Variables';
 
 export const MainHeader = styled.div`
   @import 'https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400';
@@ -29,12 +30,30 @@ export const MainTitle = styled.div`
   display: block;
   padding: 1rem;
   color: ${palette.fontColor};
-  font-size: 5rem;
+
+  @media ${device.small} {
+    font-size: 3rem;
+  }
+  @media ${device.medium} {
+    font-size: 4rem;
+  }
+  @media ${device.large} {
+    font-size: 5rem;
+  }
 
   & > div:nth-child(2) {
     width: 20rem;
     height: auto;
-    font-size: 2rem;
+
+    @media ${device.small} {
+      font-size: 1.3rem;
+    }
+    @media ${device.medium} {
+      font-size: 1.8rem;
+    }
+    @media ${device.large} {
+      font-size: 2rem;
+    }
   }
 
   & > span:nth-child(3) {
