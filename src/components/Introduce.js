@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Media from 'react-media';
 import TypeIt from 'typeit-react';
 import * as I from '../style/Introduce.style';
 
@@ -8,8 +9,27 @@ export function Introduce() {
     '사용자 경험을 1순위로 하여 개발하는',
     '새로운 도전에 있어서 적극적으로 즐기는',
   ];
+
   return (
     <I.MainHeader id='about'>
+      <div>
+        <Media
+          queries={{
+            small: '(max-width: 599px)',
+            medium: '(min-width: 600px) and (max-width: 1199px)',
+            large: '(min-width: 1200px)',
+          }}
+        >
+          {(matches) => (
+            <Fragment>
+              {matches.small && <p>I am small!</p>}
+              {matches.medium && <p>I am medium!</p>}
+              {matches.large && <p>I am large!</p>}
+            </Fragment>
+          )}
+        </Media>
+      </div>
+
       <I.ProfileImg src='https://via.placeholder.com/300x400' />
       <I.MainTitle>
         <span>저는</span>
