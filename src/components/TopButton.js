@@ -17,10 +17,12 @@ export const TopButton = () => {
     });
   });
 
+  const moveToTop = () => (document.documentElement.scrollTop = 0);
+
   return (
     <div>
       {topBtn && (
-        <TopBtn to='#'>
+        <TopBtn onClick={moveToTop}>
           <CaretUp style={{ transform: 'translateY(-2px)' }} />
         </TopBtn>
       )}
@@ -28,7 +30,7 @@ export const TopButton = () => {
   );
 };
 
-const TopBtn = styled(Link)`
+const TopBtn = styled.div`
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -41,6 +43,7 @@ const TopBtn = styled(Link)`
   border-radius: 50%;
   color: ${palette.subFontColor};
   background-color: #fff;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   z-index: 9998;
 `;
