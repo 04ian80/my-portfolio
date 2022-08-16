@@ -1,5 +1,4 @@
-import React, { useState, Fragment } from 'react';
-import Media from 'react-media';
+import React from 'react';
 import TypeIt from 'typeit-react';
 import * as I from '../style/Introduce.style';
 
@@ -12,27 +11,6 @@ export function Introduce() {
 
   return (
     <I.MainHeader id='about'>
-      {/* <Media
-        queries={{
-          small: '(max-width: 599px)',
-          medium: '(min-width: 600px) and (max-width: 1199px)',
-          large: '(min-width: 1200px)',
-        }}
-      >
-        {(matches) => (
-          <Fragment>
-            {matches.small && (
-              <I.ProfileImg src='https://via.placeholder.com/200x300' />
-            )}
-            {matches.medium && (
-              <I.ProfileImg src='https://via.placeholder.com/250x350' />
-            )}
-            {matches.large && (
-              <I.ProfileImg src='https://via.placeholder.com/300x400' />
-            )}
-          </Fragment>
-        )} */}
-      {/* </Media> */}
       <I.ProfileImg src='https://via.placeholder.com/300x400' />
 
       <I.MainTitle>

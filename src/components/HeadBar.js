@@ -2,14 +2,12 @@ import React, { useReducer, useState, useEffect } from 'react';
 import * as C from '../style/HeadBar.style';
 import { SVG } from '../icon/SVG';
 import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
-// import styled, { ThemeProvider } from 'styled-components';
 
 export const HeadBar = () => {
   const [iconColor, setIconColor] = useReducer(iconColorReducer, initIconColor);
   const [iconLocation, setIconLocation] = useState(
     window.innerWidth < 490 ? true : false
   );
-  // const [iconLocation, setIconLocation] = useReducer(iconLocationReducer, initIconLocation);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -20,10 +18,6 @@ export const HeadBar = () => {
       }
     });
   });
-
-  // const theme = {
-  //   iconLocate,
-  // };
 
   return (
     <C.Container iconLocation={iconLocation}>

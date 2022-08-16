@@ -42,17 +42,24 @@ export const MainTitle = styled.div`
   }
 
   & > div:nth-child(2) {
-    width: 20rem;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    /* background-color: #fff; */
+    white-space: normal;
     height: auto;
+    font-weight: 400;
 
     @media ${device.small} {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      width: 25rem;
     }
     @media ${device.medium} {
       font-size: 1.8rem;
+      width: 32rem;
     }
     @media ${device.large} {
       font-size: 2rem;
+      width: 33rem;
     }
   }
 
