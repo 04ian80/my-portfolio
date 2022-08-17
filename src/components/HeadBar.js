@@ -26,11 +26,11 @@ export const HeadBar = () => {
           <C.NavLink to='/#about' smooth={true}>
             about
           </C.NavLink>
-          <C.NavLink to='/#portfolio' smooth={true}>
-            portfolio
-          </C.NavLink>
           <C.NavLink to='/#skill' smooth={true}>
             skill
+          </C.NavLink>
+          <C.NavLink to='/#portfolio' smooth={true}>
+            portfolio
           </C.NavLink>
         </C.NavList>
       </C.Nav>
