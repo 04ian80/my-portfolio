@@ -8,7 +8,7 @@ export const MainHeader = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding-top: 4em;
+  padding: 4rem 0;
   flex-shrink: 0;
   flex-wrap: wrap;
   font-weight: 300;
