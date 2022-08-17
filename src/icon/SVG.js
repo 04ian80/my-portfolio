@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const svg = {
   github:
@@ -11,15 +12,16 @@ const svg = {
 
 export const SVG = (props) => {
   return (
-    <svg
+    <motion.svg
       width={props.width ? props.width : '2rem'}
       height={props.height ? props.height : '2rem'}
       role='img'
       viewBox='0 0 24 24'
       fill={props.color}
+      animate={{ opacity: ['0', '1'] }}
     >
       <title>{props.name}</title>
       <path d={svg[props.name]} />
-    </svg>
+    </motion.svg>
   );
 };

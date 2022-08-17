@@ -21,7 +21,7 @@ export const HeadBar = () => {
 
   return (
     <C.Container iconLocation={iconLocation}>
-      <C.Nav>
+      <C.Nav animate={{ opacity: ['0', '1'] }}>
         <C.NavList>
           <C.NavLink to='/#about' smooth={true}>
             about

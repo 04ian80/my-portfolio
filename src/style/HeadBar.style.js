@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import * as palette from './Variables';
 import { HashLink as Link } from 'react-router-hash-link';
+import { motion } from 'framer-motion';
 
 const iconLocate = {
   iconRow: `
@@ -38,7 +39,7 @@ export const Container = styled.div`
   // justify-content: center;
 `;
 
-export const Nav = styled.nav`
+export const Nav = styled(motion.nav)`
   // background-color: #fff;
   margin: 1em;
 `;
