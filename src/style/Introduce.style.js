@@ -8,7 +8,7 @@ export const MainHeader = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 4rem 0;
+  height: 100vh;
   flex-shrink: 0;
   flex-wrap: wrap;
   font-weight: 300;
@@ -31,6 +31,9 @@ export const MainTitle = styled.div`
   padding: 1rem;
   color: ${palette.fontColor};
 
+  @media ${device.xSmall} {
+    font-size: 1.8rem;
+  }
   @media ${device.small} {
     font-size: 3rem;
   }
@@ -48,6 +51,11 @@ export const MainTitle = styled.div`
     white-space: normal;
     height: auto;
     font-weight: 400;
+
+    @media ${device.xSmall} {
+      font-size: 1rem;
+      width: 19rem;
+    }
 
     @media ${device.small} {
       font-size: 1.4rem;

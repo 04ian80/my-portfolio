@@ -6,14 +6,18 @@ export const velogColor = '#20C997';
 export const gmailColor = '#EA4335';
 
 const size = {
-  small: '599px',
+  xSmall: '300px',
+  xSmallMax: '449px',
+  small: '450px',
+  smallMax: '599px',
   medium: '600px',
   mediumMax: '1199px',
   large: '1200px',
 };
 
 export const device = {
-  small: `(max-width: ${size.small})`,
+  xSmall: `(min-width: ${size.xSmall}) and (max-width: ${size.xSmallMax})`,
+  small: `(min-width: ${size.small}) and (max-width: ${size.smallMax})`,
   medium: `(min-width: ${size.medium}) and (max-width: ${size.mediumMax})`,
   large: `(min-width: ${size.large})`,
 };

@@ -1,6 +1,7 @@
 import React from 'react';
-import { SVG } from '../icon/SVG';
 import styled from 'styled-components';
+import { SVG } from '../icon/SVG';
+import { device } from '../style/Variables';
 
 export function Skill() {
   return (
@@ -15,12 +16,7 @@ export function Skill() {
         <SVG name='JavaScript' color='#F7DF1E' size='60px'></SVG>
       </SkillIcon>
       <SkillIcon>
-        <SVG
-          name='styledComponents'
-          color='#DB7093'
-          width='60px'
-          height='60px'
-        ></SVG>
+        <SVG name='styledComponents' color='#DB7093' size='60px'></SVG>
       </SkillIcon>
       <SkillIcon>
         <SVG name='React' color='#61DAFB' size='60px'></SVG>
@@ -37,5 +33,5 @@ const SkillIconContainer = styled.div`
 `;
 
 const SkillIcon = styled.div`
-  margin-right: 2rem;
+  margin: 0 2rem;
 `;

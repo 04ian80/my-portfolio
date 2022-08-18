@@ -33,14 +33,11 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  // background-color: #fff;
   z-index: 9999;
   ${(props) => (props.iconLocation ? iconLocate.navCenter : '')};
-  // justify-content: center;
 `;
 
 export const Nav = styled(motion.nav)`
-  // background-color: #fff;
   margin: 1em;
 `;
 
