@@ -33,6 +33,7 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
+  background-color: ${palette.bgColor};
   z-index: 9999;
   ${(props) => (props.iconLocation ? iconLocate.navCenter : '')};
 `;
