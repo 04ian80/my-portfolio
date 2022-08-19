@@ -18,7 +18,7 @@ export function Skills() {
             </SkillIcon>
             <SkillDescContainer>
               <SkillDescList>
-                <li>웹 접근성 향상</li>
+                <li>웹 접근성을 고려한 WAI-ARIA 사용</li>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -154,8 +154,4 @@ const SkillDescContainer = styled(motion.div)`
   height: 10rem; ;
 `;
 
-const SkillDescList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-`;
+const SkillDescList = styled.ul``;

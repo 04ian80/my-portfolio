@@ -43,6 +43,7 @@ export const Nav = styled(motion.nav)`
 `;
 
 export const NavList = styled.ul`
+  display: flex;
   padding: 0;
   margin: 0;
   font-size: 1.4rem;
@@ -51,9 +52,9 @@ export const NavList = styled.ul`
     padding-right: 1em;
   }
 
-  & > *:not(:last-child)::after {
+  & > *:not(:last-child):not(:first-child)::after {
     content: '/';
-    color: ${palette.bgColor};
+    color: ${palette.pointColor};
     padding-left: 1em;
   }
 `;

@@ -1,6 +1,6 @@
 import React, { useReducer, useState, useEffect } from 'react';
 import * as C from '../style/HeadBar.style';
-import { SVG } from '../icon/SVG';
+import { SVG, LOGO } from '../icon/SVG';
 import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
 
 export const HeadBar = () => {
@@ -11,7 +11,7 @@ export const HeadBar = () => {
 
   useEffect(() => {
     window.addEventListener('resize', () => {
-      if (window.innerWidth < 490) {
+      if (window.innerWidth < 580) {
         setIconLocation(true);
       } else {
         setIconLocation(false);
@@ -23,6 +23,7 @@ export const HeadBar = () => {
     <C.Container iconLocation={iconLocation}>
       <C.Nav animate={{ opacity: ['0', '1'] }}>
         <C.NavList>
+          <LOGO />
           <C.NavLink to='/#about' smooth={true}>
             about
           </C.NavLink>

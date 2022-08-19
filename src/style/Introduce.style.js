@@ -46,7 +46,7 @@ export const MainTitle = styled.div`
 
   & > div:nth-child(2) {
     padding: 0.5rem 1rem;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid ${palette.pointColor};
     /* background-color: #fff; */
     white-space: normal;
     height: auto;
