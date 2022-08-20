@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { CaretUp } from 'react-bootstrap-icons';
 import { motion } from 'framer-motion';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export const TopButton = () => {
   const [topBtn, setTopBtn] = useState(false);
@@ -17,16 +18,15 @@ export const TopButton = () => {
     });
   });
 
-  const moveToTop = () => (document.documentElement.scrollTop = 0);
-
   return (
     <div>
       {topBtn && (
         <TopBtn
+          to='/#introduce'
+          smooth={true}
           animate={{
             y: ['0px', '-40px', '-30px', '-34px', '-30px'],
           }}
-          onClick={moveToTop}
         >
           <CaretUp style={{ transform: 'translateY(-2px)' }} />
         </TopBtn>
@@ -35,7 +35,7 @@ export const TopButton = () => {
   );
 };
 
-const TopBtn = styled(motion.div)`
+const TopBtn = styled(motion(Link))`
   position: fixed;
   bottom: 0px;
   right: 30px;
