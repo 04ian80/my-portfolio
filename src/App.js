@@ -1,17 +1,25 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
+import { Mystory } from './components/Mystory';
+import styled from 'styled-components';
+import * as palette from './style/Variables';
 
-function App() {
+export default function App() {
   return (
-    <div>
+    <HomeContainer>
       <BrowserRouter>
         <Routes>
-          <Route path={'/'} element={<Home />}></Route>
+          <Route path={'/'} element={<Home />} />
+          <Route path={'/mystory'} element={<Mystory />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </HomeContainer>
   );
 }
 
-export default App;
+const HomeContainer = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  background-color: ${palette.bgColor};
+`;

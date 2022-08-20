@@ -15,7 +15,7 @@ export const MainHeader = styled.div`
 `;
 
 export const ProfileImg = styled.img`
-  padding: 1em;
+  padding-top: 8rem;
 `;
 
 export const Introduce = styled.div`

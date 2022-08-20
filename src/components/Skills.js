@@ -11,7 +11,7 @@ export function Skills() {
         style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
       >
         <RowSkillIcon>
-          <SkillEach>
+          <SkillEach whileHover={{ scale: 1.1 }}>
             <SkillIcon>
               <SVG name='HTML5' color='#E34F26' size='60px'></SVG>
               <span>HTML</span>
@@ -26,7 +26,7 @@ export function Skills() {
             </SkillDescContainer>
           </SkillEach>
 
-          <SkillEach>
+          <SkillEach whileHover={{ scale: 1.1 }}>
             <SkillIcon>
               <SVG name='CSS3' color='#1572B6' size='60px'></SVG>
               <span>CSS</span>
@@ -43,12 +43,12 @@ export function Skills() {
         </RowSkillIcon>
 
         <RowSkillIcon>
-          <SkillEach>
+          <SkillEach whileHover={{ scale: 1.1 }}>
             <SkillIcon>
               <SVG name='JavaScript' color='#F7DF1E' size='60px'></SVG>
               <span>JavaScript</span>
             </SkillIcon>
-            <SkillDescContainer animate={{}}>
+            <SkillDescContainer>
               <SkillDescList>
                 <li>웹 접근성 향상</li>
                 <li></li>
@@ -58,7 +58,7 @@ export function Skills() {
             </SkillDescContainer>
           </SkillEach>
 
-          <SkillEach>
+          <SkillEach whileHover={{ scale: 1.1 }}>
             <SkillIcon>
               <SVG name='React' color='#61DAFB' size='60px'></SVG>
               <span>React</span>
@@ -76,14 +76,14 @@ export function Skills() {
       </div>
 
       <RowSkillIcon>
-        <SkillEach>
+        <SkillEach whileHover={{ scale: 1.1 }}>
           <SkillIcon>
             <SVG name='styledComponents' color='#DB7093' size='60px'></SVG>
             <span>styled-components</span>
           </SkillIcon>
         </SkillEach>
 
-        <SkillEach>
+        <SkillEach whileHover={{ scale: 1.1 }}>
           <SkillIcon>
             <SVG name='Sass' color='#CC6699' size='60px'></SVG>
             <span>Sass</span>
@@ -109,10 +109,10 @@ const SkillIconContainer = styled.div`
   padding: 4rem;
 `;
 
-const SkillEach = styled.div`
+const SkillEach = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  margin: 1rem 2rem;
+  margin: 2rem;
 `;
 
 const SkillIcon = styled.div`

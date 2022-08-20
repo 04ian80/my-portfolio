@@ -10,7 +10,7 @@ export function Introduce() {
   ];
 
   return (
-    <I.MainHeader id='about'>
+    <I.MainHeader id='introduce'>
       <I.ProfileImg src='https://via.placeholder.com/300x400' />
 
       <I.MainTitle>
@@ -21,15 +21,15 @@ export function Introduce() {
             getBeforeInit={(instance) => {
               instance
                 .type(intro[0])
-                .pause(3000)
+                .pause(2000)
                 .delete('*')
                 .pause(500)
                 .type(intro[1])
-                .pause(3000)
+                .pause(2000)
                 .delete('*')
                 .pause(500)
                 .type(intro[2])
-                .pause(3000);
+                .pause(2000);
 
               return instance;
             }}

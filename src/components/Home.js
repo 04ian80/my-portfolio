@@ -7,12 +7,12 @@ import { Skills } from './Skills';
 
 function Home() {
   return (
-    <H.HomeContainer>
+    <div>
       <HeadBar />
       <Introduce />
       <TopButton />
       <Skills />
-    </H.HomeContainer>
+    </div>
   );
 }
 
