@@ -17,6 +17,7 @@ export const MainHeader = styled.div`
 `;
 
 export const ProfileImg = styled.img`
+  border-radius: 10px;
   object-fit: cover;
   background-color: rgba(0, 0, 0, 0.2);
 `;
@@ -86,33 +87,6 @@ export const MainTitle = styled.div`
     font-size: 5rem;
   }
 
-  & > div:nth-child(2) {
-    padding: 0.5rem 1rem;
-    border-bottom: 2px solid ${palette.pointColor};
-    /* background-color: #fff; */
-    white-space: normal;
-    height: auto;
-    font-weight: 400;
-
-    @media ${device.xSmall} {
-      font-size: 1rem;
-      width: 19rem;
-    }
-
-    @media ${device.small} {
-      font-size: 1.4rem;
-      width: 25rem;
-    }
-    @media ${device.medium} {
-      font-size: 1.8rem;
-      width: 32rem;
-    }
-    @media ${device.large} {
-      font-size: 2rem;
-      width: 33rem;
-    }
-  }
-
   & > span:nth-child(3) {
     opacity: 0.7;
     background: linear-gradient(to right, #5ac8df, #dd7990);
@@ -144,5 +118,32 @@ export const MainTitle = styled.div`
         -webkit-mask-position: -50%;
       }
     }
+  }
+`;
+
+export const TypeItBox = styled.div`
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid ${palette.pointColor};
+  /* background-color: #fff; */
+  white-space: normal;
+  height: 40px;
+  font-weight: 400;
+
+  @media ${device.xSmall} {
+    font-size: 1rem;
+    width: 19rem;
+  }
+
+  @media ${device.small} {
+    font-size: 1.4rem;
+    width: 25rem;
+  }
+  @media ${device.medium} {
+    font-size: 1.8rem;
+    width: 32rem;
+  }
+  @media ${device.large} {
+    font-size: 2rem;
+    width: 33rem;
   }
 `;

@@ -46,7 +46,7 @@ export function Introduce() {
 
       <I.MainTitle>
         <span>저는</span>
-        <div>
+        <I.TypeItBox>
           <TypeIt
             options={{ loop: true }}
             getBeforeInit={(instance) => {
@@ -65,7 +65,7 @@ export function Introduce() {
               return instance;
             }}
           ></TypeIt>
-        </div>
+        </I.TypeItBox>
         <span>종아인</span>
         입니다
       </I.MainTitle>
