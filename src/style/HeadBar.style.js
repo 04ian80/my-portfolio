@@ -13,6 +13,7 @@ export const Container = styled.div`
   border: 2px solid ${palette.pointColor};
   border-radius: 30px;
   padding: 0 5px;
+  min-width: 495px;
   z-index: 9999;
 `;
 
@@ -26,8 +27,11 @@ export const Nav = styled(motion.nav)`
 export const LogoContainer = styled(Link)``;
 
 export const NavList = styled.ul`
-  margin: 0;
-  font-size: 1.4rem;
+  margin: 0 30px;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  flex-shrink: 0;
 
   & > *:not(:last-child)::after {
     content: '/';

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import * as palette from './Variables';
 import { device } from './Variables';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const MainHeader = styled.div`
   @import 'https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400';
@@ -15,7 +17,41 @@ export const MainHeader = styled.div`
 `;
 
 export const ProfileImg = styled.img`
-  padding-top: 8rem;
+  /* padding-top: 8rem; */
+  width: 300px;
+  height: 400px;
+`;
+
+export const SeeMore = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  transform: translateY(1px);
+`;
+
+export const ToMystory = styled(motion(Link))`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  /* padding: 10px; */
+  border-radius: 20px;
+  color: ${palette.subFontColor};
+  background-color: ${palette.brownColor};
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+
+  & > span {
+    transform: translateY(-2px);
+  }
 `;
 
 export const Introduce = styled.div`
@@ -79,7 +115,7 @@ export const MainTitle = styled.div`
     font-weight: 600;
     cursor: default;
 
-    &: hover {
+    &:hover {
       opacity: 1;
       transition: all 0.3s ease-in-out;
       -webkit-mask-image: linear-gradient(

@@ -33,13 +33,16 @@ export const HeadBar = () => {
         {/* </Media> */}
         <C.NavList>
           <C.NavLink to='/#introduce' smooth={true}>
-            Introduce
+            자기소개
+          </C.NavLink>
+          <C.NavLink to='/#mystory' smooth={true}>
+            히스토리
           </C.NavLink>
           <C.NavLink to='/#skill' smooth={true}>
-            Skill
+            기술스택
           </C.NavLink>
           <C.NavLink to='/#portfolio' smooth={true}>
-            Portfolio
+            프로젝트
           </C.NavLink>
         </C.NavList>
 

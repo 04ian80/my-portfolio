@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TypeIt from 'typeit-react';
 import * as I from '../style/Introduce.style';
+import * as palette from '../style/Variables';
+import { motion, useIsPresent } from 'framer-motion';
+import styled from 'styled-components';
 
 export function Introduce() {
+  const [isHover, setIsHover] = useState(false);
+
   const intro = [
     '새로운 것에 관심이 많아 배우는 것을 좋아하는',
     '사용자 경험을 1순위로 하여 개발하는',
@@ -11,7 +16,26 @@ export function Introduce() {
 
   return (
     <I.MainHeader id='introduce'>
-      <I.ProfileImg src='https://via.placeholder.com/300x400' />
+      <I.ImgBox>
+        <I.ToMystory
+          to='/mystory'
+          onMouseEnter={() => {
+            setIsHover(true);
+          }}
+          onMouseLeave={() => {
+            setIsHover(false);
+          }}
+          whileHover={{ width: '100px' }}
+        >
+          {!isHover ? <span>+</span> : null}
+
+          {isHover ? (
+            <I.SeeMore>
+              <span>자세히</span>
+            </I.SeeMore>
+          ) : null}
+        </I.ToMystory>
+      </I.ImgBox>
 
       <I.MainTitle>
         <span>저는</span>
