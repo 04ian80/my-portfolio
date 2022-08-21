@@ -4,6 +4,7 @@ import * as I from '../style/Introduce.style';
 import * as palette from '../style/Variables';
 import { motion, useIsPresent } from 'framer-motion';
 import styled from 'styled-components';
+import profileImg from './image/profile.jpg';
 
 export function Introduce() {
   const [isHover, setIsHover] = useState(false);
@@ -17,6 +18,12 @@ export function Introduce() {
   return (
     <I.MainHeader id='introduce'>
       <I.ImgBox>
+        <I.ProfileImg
+          src={profileImg}
+          width='300'
+          height='400'
+          alt='프로필 이미지'
+        />
         <I.ToMystory
           to='/mystory'
           onMouseEnter={() => {

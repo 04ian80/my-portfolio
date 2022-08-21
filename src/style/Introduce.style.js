@@ -17,9 +17,15 @@ export const MainHeader = styled.div`
 `;
 
 export const ProfileImg = styled.img`
-  /* padding-top: 8rem; */
+  object-fit: cover;
+  background-color: rgba(0, 0, 0, 0.2);
+`;
+
+export const ImgBox = styled.div`
+  position: relative;
   width: 300px;
   height: 400px;
+  margin-top: 7rem;
 `;
 
 export const SeeMore = styled.div`

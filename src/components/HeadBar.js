@@ -35,9 +35,6 @@ export const HeadBar = () => {
           <C.NavLink to='/#introduce' smooth={true}>
             자기소개
           </C.NavLink>
-          <C.NavLink to='/#mystory' smooth={true}>
-            히스토리
-          </C.NavLink>
           <C.NavLink to='/#skill' smooth={true}>
             기술스택
           </C.NavLink>

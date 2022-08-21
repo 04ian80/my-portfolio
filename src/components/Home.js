@@ -12,7 +12,6 @@ function Home() {
       <TopButton />
       <HeadBar />
       <Introduce />
-      <Mystory />
       <Skills />
     </div>
   );
