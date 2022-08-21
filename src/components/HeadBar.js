@@ -2,24 +2,9 @@ import React, { useReducer, useState, useEffect } from 'react';
 import * as C from '../style/HeadBar.style';
 import { LOGO, SVG } from '../icon/SVG';
 import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
-import Media from 'react-media';
-import { device } from '../style/Variables';
 
 export const HeadBar = () => {
   const [iconColor, setIconColor] = useReducer(iconColorReducer, initIconColor);
-  const [iconLocation, setIconLocation] = useState(
-    window.innerWidth < 580 ? true : false
-  );
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      if (window.innerWidth < 580) {
-        setIconLocation(true);
-      } else {
-        setIconLocation(false);
-      }
-    });
-  });
 
   return (
     <C.Container>
@@ -43,7 +28,7 @@ export const HeadBar = () => {
           </C.NavLink>
         </C.NavList>
 
-        <C.ContactBox iconLocation={iconLocation}>
+        <C.ContactBox>
           <a
             href='https://github.com/04ian80'
             rel='noopener noreferrer'

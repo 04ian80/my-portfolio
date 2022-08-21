@@ -13,7 +13,6 @@ export const Container = styled.div`
   border: 2px solid ${palette.pointColor};
   border-radius: 30px;
   padding: 0 5px;
-  min-width: 495px;
   z-index: 9999;
 `;
 
