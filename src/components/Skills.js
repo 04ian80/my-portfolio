@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import Media from 'react-media';
 import { SVG } from '../icon/SVG';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import * as palette from '../style/Variables';
 
 export function Skills() {
   return (
@@ -33,10 +36,14 @@ export function Skills() {
             </SkillIcon>
             <SkillDescContainer>
               <SkillDescList>
-                <li>웹 접근성 향상</li>
+                <li>Grid를 이용한 화면 레이아웃</li>
                 <li></li>
                 <li></li>
-                <li></li>
+                <li>
+                  <SassLink to='/#sass'>
+                    <span>Sass</span>로 더욱 다이나믹한 스타일링
+                  </SassLink>
+                </li>
               </SkillDescList>
             </SkillDescContainer>
           </SkillEach>
@@ -86,11 +93,11 @@ export function Skills() {
         <SkillEach whileHover={{ scale: 1.1 }}>
           <SkillIcon>
             <SVG name='Sass' color='#CC6699' size='60px'></SVG>
-            <span>Sass</span>
+            <span id='sass'>Sass</span>
           </SkillIcon>
           <SkillDescContainer>
             <SkillDescList>
-              <li>웹 접근성 향상</li>
+              <li>Scss 문법 지향</li>
               <li></li>
               <li></li>
               <li></li>
@@ -130,7 +137,7 @@ const SkillIcon = styled.div`
     margin-top: 6px;
     padding: 3px 10px;
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: ${palette.salmonColor};
     font-weight: 500;
   }
 `;
@@ -146,12 +153,22 @@ const RowSkillIcon = styled.div`
 `;
 
 const SkillDescContainer = styled(motion.div)`
-  padding: 1rem;
+  padding-right: 1rem;
   /* margin-top: 1rem; */
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: ${palette.pointColor};
   border-radius: 10px;
-  width: 13rem;
+  width: 230px;
   height: 10rem; ;
 `;
 
 const SkillDescList = styled.ul``;
+
+const SassLink = styled(HashLink)`
+  color: inherit;
+  text-decoration: none;
+
+  & > span {
+    text-decoration: underline;
+    color: #cc6699;
+  }
+`;

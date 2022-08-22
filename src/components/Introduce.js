@@ -24,6 +24,20 @@ export function Introduce() {
           height='400'
           alt='프로필 이미지'
         />
+
+        {isHover ? (
+          <I.BackOfToMystory
+            animate={{ scale: [1.1, 1.2], opacity: [0.7, 0] }}
+            transition={{ repeat: Infinity }}
+            style={{ width: '100px' }}
+          ></I.BackOfToMystory>
+        ) : (
+          <I.BackOfToMystory
+            animate={{ scale: [1.1, 1.4], opacity: [0.9, 0] }}
+            transition={{ repeat: Infinity }}
+          ></I.BackOfToMystory>
+        )}
+
         <I.ToMystory
           to='/mystory'
           onMouseEnter={() => {

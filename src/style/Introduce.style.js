@@ -47,10 +47,10 @@ export const ToMystory = styled(motion(Link))`
   align-items: center;
   width: 40px;
   height: 40px;
-  /* padding: 10px; */
   border-radius: 20px;
   color: ${palette.subFontColor};
-  background-color: ${palette.brownColor};
+  /* background-color: ${palette.salmonColor}; */
+  background-color: white;
   font-size: 20px;
   font-weight: 500;
   text-decoration: none;
@@ -59,6 +59,19 @@ export const ToMystory = styled(motion(Link))`
   & > span {
     transform: translateY(-2px);
   }
+`;
+
+export const BackOfToMystory = styled(motion.div)`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: ${palette.salmonColor};
 `;
 
 export const Introduce = styled.div`
