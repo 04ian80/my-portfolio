@@ -88,6 +88,14 @@ export function Skills() {
             <SVG name='styledComponents' color='#DB7093' size='60px'></SVG>
             <span>styled-components</span>
           </SkillIcon>
+          <SkillDescContainer>
+            <SkillDescList>
+              <li>Scss 문법 지향</li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </SkillDescList>
+          </SkillDescContainer>
         </SkillEach>
 
         <SkillEach whileHover={{ scale: 1.1 }}>
@@ -137,7 +145,7 @@ const SkillIcon = styled.div`
     margin-top: 6px;
     padding: 3px 10px;
     border-radius: 20px;
-    background-color: ${palette.salmonColor};
+    background-color: ${palette.lightGray};
     font-weight: 500;
   }
 `;
@@ -154,8 +162,9 @@ const RowSkillIcon = styled.div`
 
 const SkillDescContainer = styled(motion.div)`
   padding-right: 1rem;
-  /* margin-top: 1rem; */
-  background-color: ${palette.pointColor};
+  color: ${palette.fontColor};
+  box-shadow: ${palette.defaultShadow};
+  border: 2px solid ${palette.pointColor};
   border-radius: 10px;
   width: 230px;
   height: 10rem; ;

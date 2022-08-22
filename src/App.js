@@ -10,9 +10,8 @@ export default function App() {
     <HomeContainer>
       <BrowserRouter>
         <Routes>
-          <Route path={'/'} element={<Home />}>
-            <Route path={'/mystory'} element={<Mystory />} />
-          </Route>
+          <Route path={'/'} element={<Home />} />
+          <Route path={'/mystory'} element={<Mystory />} />
         </Routes>
       </BrowserRouter>
     </HomeContainer>

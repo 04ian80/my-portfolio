@@ -47,8 +47,8 @@ const TopBtn = styled(motion(Link))`
   border: none;
   border-radius: 50%;
   color: ${palette.subFontColor};
-  background-color: #fff;
-  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
+  background-color: ${palette.deeperWhite};
+  box-shadow: ${palette.defaultShadow};
   /* opacity: 0; */
   cursor: pointer;
   z-index: 9998;

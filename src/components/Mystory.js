@@ -4,7 +4,7 @@ import * as palette from '../style/Variables';
 
 export function Mystory() {
   return (
-    <EdContainer id='mystory'>
+    <EdContainer>
       <EdBox>
         <h2>My Story</h2>
         <ul>
