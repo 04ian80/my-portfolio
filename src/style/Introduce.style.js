@@ -71,7 +71,7 @@ export const BackOfToMystory = styled(motion.div)`
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  background-color: ${palette.salmonColor};
+  background-color: ${palette.bgColor};
 `;
 
 export const Introduce = styled.div`
@@ -137,7 +137,6 @@ export const MainTitle = styled.div`
 export const TypeItBox = styled.div`
   padding: 0.5rem 1rem;
   border-bottom: 2px solid ${palette.pointColor};
-  /* background-color: #fff; */
   white-space: normal;
   height: 40px;
   font-weight: 400;

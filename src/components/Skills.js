@@ -40,7 +40,7 @@ export function Skills() {
                 <li></li>
                 <li></li>
                 <li>
-                  <SassLink to='/#sass'>
+                  <SassLink to='/#sass' smooth={true}>
                     <span>Sass</span>로 더욱 다이나믹한 스타일링
                   </SassLink>
                 </li>
@@ -57,8 +57,11 @@ export function Skills() {
             </SkillIcon>
             <SkillDescContainer>
               <SkillDescList>
-                <li>웹 접근성 향상</li>
-                <li></li>
+                <li>이벤트 핸들링</li>
+                <li>날짜 관련 메소드 활용</li>
+                <li style={{ listStyle: 'none' }}>
+                  &#40;getDay, getFullYear...&#41;
+                </li>
                 <li></li>
                 <li></li>
               </SkillDescList>
@@ -72,7 +75,7 @@ export function Skills() {
             </SkillIcon>
             <SkillDescContainer>
               <SkillDescList>
-                <li>웹 접근성 향상</li>
+                <li>라우터를 사용하여 SPA 구현</li>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -90,7 +93,7 @@ export function Skills() {
           </SkillIcon>
           <SkillDescContainer>
             <SkillDescList>
-              <li>Scss 문법 지향</li>
+              <li>props를 활용한 상태값 스타일링</li>
               <li></li>
               <li></li>
               <li></li>

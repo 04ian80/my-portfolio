@@ -29,7 +29,6 @@ export const iconColorReducer = (state, action) => {
       break;
     case 'DEFAULT':
       return {
-        ...state,
         githubColor: palette.subFontColor,
         velogColor: palette.subFontColor,
         gmailColor: palette.subFontColor,
