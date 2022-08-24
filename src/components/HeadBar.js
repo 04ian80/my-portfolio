@@ -23,7 +23,7 @@ export const HeadBar = () => {
           <C.NavLink to='/#skill' smooth={true}>
             기술스택
           </C.NavLink>
-          <C.NavLink to='/#portfolio' smooth={true}>
+          <C.NavLink to='/#project' smooth={true}>
             프로젝트
           </C.NavLink>
         </C.NavList>

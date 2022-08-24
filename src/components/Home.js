@@ -1,10 +1,9 @@
 import React from 'react';
-import * as H from '../style/Home.style';
 import { Introduce } from './Introduce';
 import { HeadBar } from './HeadBar';
 import { TopButton } from './TopButton';
 import { Skills } from './Skills';
-import { Mystory } from './Mystory';
+import { Project } from './Project';
 
 function Home() {
   return (
@@ -13,6 +12,7 @@ function Home() {
       <HeadBar />
       <Introduce />
       <Skills />
+      <Project />
     </div>
   );
 }

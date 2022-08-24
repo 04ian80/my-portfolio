@@ -11,9 +11,9 @@ export const MainHeader = styled.div`
   justify-content: space-evenly;
   align-items: center;
   height: 100vh;
-  flex-shrink: 0;
   flex-wrap: wrap;
   font-weight: 300;
+  flex-shrink: 0;
 `;
 
 export const ProfileImg = styled.img`
@@ -156,6 +156,6 @@ export const TypeItBox = styled.div`
   }
   @media ${device.large} {
     font-size: 2rem;
-    width: 33rem;
+    width: 36rem;
   }
 `;

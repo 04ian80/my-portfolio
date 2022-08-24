@@ -9,6 +9,7 @@ export const deeperWhite = '#f6f2f0';
 export const lightGray = 'rgba(0,0,0,0.1)';
 
 export const defaultShadow = '3px 3px 2px rgba(0,0,0,0.2)';
+export const defaultRadius = '10px';
 
 export const githubColor = '#181717';
 export const velogColor = '#20C997';

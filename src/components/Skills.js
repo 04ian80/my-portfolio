@@ -125,6 +125,8 @@ const SkillIconContainer = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 4rem;
+  min-height: 100vh;
+  background-color: #fafafa;
 `;
 
 const SkillEach = styled(motion.div)`
@@ -165,12 +167,13 @@ const RowSkillIcon = styled.div`
 
 const SkillDescContainer = styled(motion.div)`
   padding-right: 1rem;
-  color: ${palette.fontColor};
-  box-shadow: ${palette.defaultShadow};
-  border: 2px solid ${palette.pointColor};
-  border-radius: 10px;
   width: 230px;
-  height: 10rem; ;
+  height: 10rem;
+  border: 2px solid ${palette.pointColor};
+  border-radius: ${palette.defaultRadius};
+  color: ${palette.fontColor};
+  background-color: #fff;
+  box-shadow: ${palette.defaultShadow};
 `;
 
 const SkillDescList = styled.ul``;
