@@ -10,6 +10,7 @@ import * as palette from '../style/Variables';
 export function Skills() {
   return (
     <SkillIconContainer id='skill'>
+      <CategoryTitle>기술스택</CategoryTitle>
       <div
         style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
       >
@@ -121,12 +122,24 @@ export function Skills() {
 }
 
 const SkillIconContainer = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 4rem;
+  padding: 10rem 0;
   min-height: 100vh;
   background-color: #fafafa;
+`;
+
+const CategoryTitle = styled.span`
+  position: absolute;
+  top: 7rem;
+  left: 4rem;
+  padding: 0 20px;
+  border-bottom: 1px solid ${palette.pointColor};
+  font-size: 2rem;
+  font-weight: 500;
+  color: ${palette.subFontColor};
 `;
 
 const SkillEach = styled(motion.div)`
