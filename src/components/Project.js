@@ -2,12 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import musicApp from './image/musicapp.png';
+import comingsoon from './image/comingsoon.png';
 
 export function Project() {
   return (
     <ProjectContainer id='project'>
       <ProjectHeader>
-        <CategoryTitle>프로젝트</CategoryTitle>
+        <CategoryTitle>
+          <span>프로젝트</span>
+        </CategoryTitle>
 
         <ProjectCategoryAll>
           <span>전체보기</span>
@@ -65,6 +68,28 @@ export function Project() {
           </ProjectDesc>
         </EachProject>
 
+        <EachProject>
+          <ProjectImgBox>
+            <ProjectImg
+              src={comingsoon}
+              alt='사이드 프로젝트 준비중'
+              width='240'
+              height='370'
+            />
+          </ProjectImgBox>
+
+          <ProjectDesc>
+            <ProjectCategory>
+              <span>사이드 프로젝트</span>
+            </ProjectCategory>
+            <ProjectName>
+              <span>준비중...</span>
+            </ProjectName>
+            <Projectintro>
+              <span>아이디어가 샘솟는 중...</span>
+            </Projectintro>
+          </ProjectDesc>
+        </EachProject>
         <EachProject></EachProject>
       </EachProjectContainer>
       {/* </div> */}
@@ -77,33 +102,44 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   min-height: 100vh;
   flex-wrap: wrap;
-  /* padding: 4rem; */
+  padding: 4rem 0;
 `;
 
-const CategoryTitle = styled.span`
-  /* position: absolute; */
-  top: 7rem;
-  left: 4rem;
+const ProjectHeader = styled.div`
+  display: flex;
+  padding: 4rem;
+
+  & > *:not(:last-child) {
+    margin-right: 20px;
+  }
+`;
+
+const CategoryTitle = styled.div`
   padding: 0 20px;
   border-bottom: 1px solid ${palette.pointColor};
   font-size: 2rem;
   font-weight: 500;
   color: ${palette.subFontColor};
-`;
-
-const ProjectHeader = styled.div`
-  display: flex;
-  flex-direction: column;
+  flex-shrink: 0;
 `;
 
 const ProjectCategoryAll = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    padding: 10px;
+    background-color: ${palette.deeperWhite};
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
 
   & > *:not(:last-child) {
-    margin-right: 5px;
+    margin-right: 10px;
   }
 `;
 
@@ -115,7 +151,7 @@ const EachProjectContainer = styled.div`
 `;
 
 const EachProject = styled.div`
-  width: 240px;
+  width: 250px;
   height: 370px;
   margin: 2rem;
   border: 2px solid ${palette.brownColor};
@@ -127,6 +163,8 @@ const EachProject = styled.div`
 `;
 
 const ProjectImgBox = styled.div`
+  display: flex;
+  justify-content: center;
   height: 70%;
 `;
 

@@ -10,7 +10,7 @@ export const MainHeader = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   flex-wrap: wrap;
   font-weight: 300;
   flex-shrink: 0;
