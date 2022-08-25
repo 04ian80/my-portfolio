@@ -4,6 +4,7 @@ import * as palette from '../style/Variables';
 import { projectData as data } from '../data/ProjectData';
 import { categoryReducer, initCategory } from '../store/ProjectReducer';
 import { motion } from 'framer-motion';
+import { device } from '../style/Variables';
 
 export function Project() {
   const [state, dispatch] = useReducer(categoryReducer, initCategory);
@@ -63,6 +64,7 @@ export function Project() {
                 key={d.id}
                 style={{ opacity: d.name === '준비중...' && 0.6 }}
                 whileHover={{ scale: d.name !== '준비중...' ? 1.1 : 1 }}
+                animate={{ y: ['20px', '10px'] }}
               >
                 <ProjectImgBox>
                   <ProjectImg
@@ -101,13 +103,12 @@ const ProjectContainer = styled.div`
   justify-content: center;
   min-height: 100vh;
   flex-wrap: wrap;
-  padding: 1rem 0;
 `;
 
 const ProjectHeader = styled.div`
   display: flex;
   align-items: flex-start;
-  padding: 4rem;
+  padding: 8rem 4rem 0;
   flex-wrap: wrap;
 
   & > *:not(:last-child) {
@@ -148,6 +149,7 @@ const EachProjectContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  height: 100vh;
 `;
 
 const EachProject = styled(motion.div)`

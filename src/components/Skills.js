@@ -26,7 +26,9 @@ export function Skills() {
                     ></SVG>
                     <span>{d.skillName}</span>
                   </SkillIcon>
-                  <SkillDescContainer>{d.description}</SkillDescContainer>
+                  <SkillDescContainer animate={{ y: ['10px', '0px'] }}>
+                    {d.description}
+                  </SkillDescContainer>
                 </SkillEach>
               )
           )}
@@ -46,7 +48,9 @@ export function Skills() {
                     ></SVG>
                     <span>{d.skillName}</span>
                   </SkillIcon>
-                  <SkillDescContainer>{d.description}</SkillDescContainer>
+                  <SkillDescContainer animate={{ y: ['10px', '0px'] }}>
+                    {d.description}
+                  </SkillDescContainer>
                 </SkillEach>
               )
           )}
@@ -62,7 +66,9 @@ export function Skills() {
                   <SVG name={d.svg.name} color={d.svg.color} size='60px'></SVG>
                   <span>{d.skillName}</span>
                 </SkillIcon>
-                <SkillDescContainer>{d.description}</SkillDescContainer>
+                <SkillDescContainer animate={{ y: ['10px', '0px'] }}>
+                  {d.description}
+                </SkillDescContainer>
               </SkillEach>
             )
         )}
