@@ -102,6 +102,7 @@ const ProjectContainer = styled.div`
 
 const ProjectHeader = styled.div`
   display: flex;
+  align-items: flex-start;
   padding: 4rem;
   flex-wrap: wrap;
 
