@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import musicApp from './image/musicapp.png';
 import comingsoon from './image/comingsoon.png';
+import dday from './image/dday.png';
 
 export function Project() {
   return (
@@ -22,12 +23,12 @@ export function Project() {
       <EachProjectContainer>
         <EachProject>
           <ProjectImgBox>
-            {/* <ProjectImg
-            src={musicApp}
-            alt='음악앱 ui 구현 미니 프로젝트'
-            width='260'
-            height='400'
-          /> */}
+            <ProjectImg
+              src={dday}
+              alt='D-day 계산 앱'
+              width='260'
+              height='300'
+            />
           </ProjectImgBox>
 
           <ProjectDesc>
