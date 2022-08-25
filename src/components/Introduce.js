@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import TypeIt from 'typeit-react';
 import * as I from '../style/Introduce.style';
-import * as palette from '../style/Variables';
-import { motion, useIsPresent } from 'framer-motion';
-import styled from 'styled-components';
 import profileImg from './image/profile.jpg';
 
 export function Introduce() {

@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Media from 'react-media';
 import { SVG } from '../icon/SVG';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import * as palette from '../style/Variables';
 

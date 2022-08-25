@@ -1,8 +1,9 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { projectData as data } from '../data/ProjectData';
 import { categoryReducer, initCategory } from '../store/ProjectReducer';
+import { motion } from 'framer-motion';
 
 export function Project() {
   const [state, dispatch] = useReducer(categoryReducer, initCategory);
@@ -58,7 +59,11 @@ export function Project() {
         {data.map(
           (d) =>
             state.category.includes(d.category) && (
-              <EachProject key={d.id}>
+              <EachProject
+                key={d.id}
+                style={{ opacity: d.name === '준비중...' && 0.6 }}
+                whileHover={{ scale: d.name !== '준비중...' ? 1.1 : null }}
+              >
                 <ProjectImgBox>
                   <ProjectImg
                     src={d.img}
@@ -67,7 +72,6 @@ export function Project() {
                     height={d.imgSize.height}
                   />
                 </ProjectImgBox>
-
                 <ProjectDesc>
                   <ProjectCategory>
                     <span>{d.category}</span>
@@ -143,11 +147,10 @@ const ProjectCategoryAll = styled.div`
 const EachProjectContainer = styled.div`
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-wrap: wrap;
 `;
 
-const EachProject = styled.div`
+const EachProject = styled(motion.div)`
   width: 250px;
   height: 370px;
   margin: 2rem;

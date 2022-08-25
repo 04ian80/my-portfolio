@@ -49,7 +49,6 @@ const TopBtn = styled(motion(Link))`
   color: ${palette.subFontColor};
   background-color: ${palette.deeperWhite};
   box-shadow: ${palette.defaultShadow};
-  /* opacity: 0; */
   cursor: pointer;
   z-index: 9998;
 `;

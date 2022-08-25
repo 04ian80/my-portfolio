@@ -40,6 +40,7 @@ export const categoryReducer = (state, action) => {
         },
         category: '사이드 프로젝트',
       };
+      break;
     case 'MINI':
       return {
         btnColor: {
@@ -59,11 +60,13 @@ export const categoryReducer = (state, action) => {
         },
         category: '미니 프로젝트',
       };
+      break;
     case 'ALL':
       return {
         ...initCategory,
       };
     default:
       return;
+      break;
   }
 };

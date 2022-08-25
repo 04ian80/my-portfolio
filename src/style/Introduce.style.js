@@ -49,7 +49,6 @@ export const ToMystory = styled(motion(Link))`
   height: 40px;
   border-radius: 20px;
   color: ${palette.subFontColor};
-  /* background-color: ${palette.salmonColor}; */
   background-color: white;
   font-size: 20px;
   font-weight: 500;

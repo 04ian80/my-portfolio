@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import * as C from '../style/HeadBar.style';
 import { LOGO, SVG } from '../icon/SVG';
 import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
@@ -9,13 +9,10 @@ export const HeadBar = () => {
   return (
     <C.Container>
       <C.Nav animate={{ opacity: ['0', '1'] }}>
-        {/* <Media queries={{ small: ${device.small} }}> */}
-
         <C.LogoContainer to='/mystory'>
           <LOGO />
         </C.LogoContainer>
 
-        {/* </Media> */}
         <C.NavList>
           <C.NavLink to='/#introduce' smooth={true}>
             자기소개
