@@ -48,7 +48,7 @@ export const LOGO = () => {
       y='0px'
       width='5rem'
       viewBox='0 0 688 464'
-      enable-background='new 0 0 688 464'
+      enableBackground='new 0 0 688 464'
       xmlSpace='preserve'
     >
       <path

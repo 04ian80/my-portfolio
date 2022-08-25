@@ -1,15 +1,11 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
-import musicApp from './image/musicapp.png';
-import comingsoon from './image/comingsoon.png';
-import dday from './image/dday.png';
 import { projectData as data } from '../data/ProjectData';
+import { categoryReducer, initCategory } from '../store/ProjectReducer';
 
 export function Project() {
-  // const [state, dispatch] = useReducer(reducer, initArg);
-  console.log(data);
-  data.map((d, i) => console.log(d.name));
+  const [state, dispatch] = useReducer(categoryReducer, initCategory);
 
   return (
     <ProjectContainer id='project'>
@@ -19,40 +15,76 @@ export function Project() {
         </CategoryTitle>
 
         <ProjectCategoryAll>
-          <span>전체보기</span>
-          <span>사이드 프로젝트</span>
-          <span>미니 프로젝트</span>
+          <span
+            style={{
+              backgroundColor: state.btnColor.all,
+              color: state.fontColor.all,
+              fontWeight: state.fontBold.all,
+            }}
+            onClick={() => {
+              dispatch({ type: 'ALL' });
+            }}
+          >
+            전체보기
+          </span>
+          <span
+            style={{
+              backgroundColor: state.btnColor.side,
+              color: state.fontColor.side,
+              fontWeight: state.fontBold.side,
+            }}
+            onClick={() => {
+              dispatch({ type: 'SIDE' });
+            }}
+          >
+            사이드 프로젝트
+          </span>
+          <span
+            style={{
+              backgroundColor: state.btnColor.mini,
+              color: state.fontColor.mini,
+              fontWeight: state.fontBold.mini,
+            }}
+            onClick={() => {
+              dispatch({ type: 'MINI' });
+            }}
+          >
+            미니 프로젝트
+          </span>
         </ProjectCategoryAll>
       </ProjectHeader>
 
       <EachProjectContainer>
-        {data.map((d) => (
-          <EachProject key={d.id}>
-            <ProjectImgBox>
-              <ProjectImg
-                src={d.img}
-                alt='D-day 계산 앱'
-                width={d.imgSize.width}
-                height={d.imgSize.height}
-              />
-            </ProjectImgBox>
+        {data.map(
+          (d) =>
+            state.category.includes(d.category) && (
+              <EachProject key={d.id}>
+                <ProjectImgBox>
+                  <ProjectImg
+                    src={d.img}
+                    alt='D-day 계산 앱'
+                    width={d.imgSize.width}
+                    height={d.imgSize.height}
+                  />
+                </ProjectImgBox>
 
-            <ProjectDesc>
-              <ProjectCategory>
-                <span>{d.category}</span>
-              </ProjectCategory>
-              <ProjectName>
-                <span>
-                  {d.name}
-                  <span>{d.type}</span>
-                </span>
-              </ProjectName>
-              <Projectintro>
-                <span>{d.description}</span>
-              </Projectintro>
-            </ProjectDesc>
-          </EachProject>
-        ))}
+                <ProjectDesc>
+                  <ProjectCategory>
+                    <span>{d.category}</span>
+                  </ProjectCategory>
+                  <ProjectName>
+                    <span>
+                      {d.name}
+                      <span>{d.type}</span>
+                    </span>
+                  </ProjectName>
+                  <Projectintro>
+                    <span>{d.description}</span>
+                  </Projectintro>
+                </ProjectDesc>
+              </EachProject>
+            )
+        )}
       </EachProjectContainer>
     </ProjectContainer>
   );
@@ -63,18 +95,18 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: flex-start; */
   min-height: 100vh;
   flex-wrap: wrap;
-  padding: 4rem 0;
+  padding: 1rem 0;
 `;
 
 const ProjectHeader = styled.div`
   display: flex;
   padding: 4rem;
+  flex-wrap: wrap;
 
   & > *:not(:last-child) {
-    margin-right: 20px;
+    margin: 0 20px 20px 0;
   }
 `;
 
@@ -97,6 +129,9 @@ const ProjectCategoryAll = styled.div`
     background-color: ${palette.deeperWhite};
     border-radius: 20px;
     flex-shrink: 0;
+    color: ${palette.fontColor};
+    letter-spacing: -0.3px;
+    cursor: pointer;
   }
 
   & > *:not(:last-child) {
@@ -107,7 +142,7 @@ const ProjectCategoryAll = styled.div`
 const EachProjectContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-wrap: wrap;
 `;
 
@@ -141,6 +176,7 @@ const ProjectDesc = styled.div`
   border-top: 2px solid ${palette.brownColor};
   background-color: #fff;
   font-size: 1.5rem;
+  letter-spacing: -0.3px;
   padding: 3px 15px;
 
   & > * {
