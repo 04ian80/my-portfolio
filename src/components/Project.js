@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import musicApp from './image/musicapp.png';
 import comingsoon from './image/comingsoon.png';
 import dday from './image/dday.png';
+import { projectData as data } from '../data/ProjectData';
 
 export function Project() {
+  // const [state, dispatch] = useReducer(reducer, initArg);
+  console.log(data);
+  data.map((d, i) => console.log(d.name));
+
   return (
     <ProjectContainer id='project'>
       <ProjectHeader>
@@ -21,79 +26,34 @@ export function Project() {
       </ProjectHeader>
 
       <EachProjectContainer>
-        <EachProject>
-          <ProjectImgBox>
-            <ProjectImg
-              src={dday}
-              alt='D-day 계산 앱'
-              width='260'
-              height='300'
-            />
-          </ProjectImgBox>
+        {data.map((d) => (
+          <EachProject key={d.id}>
+            <ProjectImgBox>
+              <ProjectImg
+                src={d.img}
+                alt='D-day 계산 앱'
+                width={d.imgSize.width}
+                height={d.imgSize.height}
+              />
+            </ProjectImgBox>
 
-          <ProjectDesc>
-            <ProjectCategory>
-              <span>미니 프로젝트</span>
-            </ProjectCategory>
-            <ProjectName>
-              <span>D-day 계산 앱</span>
-            </ProjectName>
-            <Projectintro>
-              <span>특별한 날의 D-day를 계산하고, 등록하는 앱</span>
-            </Projectintro>
-          </ProjectDesc>
-        </EachProject>
-
-        <EachProject>
-          <ProjectImgBox>
-            <ProjectImg
-              src={musicApp}
-              alt='음악앱 ui 구현 미니 프로젝트'
-              width='240'
-              height='370'
-            />
-          </ProjectImgBox>
-
-          <ProjectDesc>
-            <ProjectCategory>
-              <span>미니 프로젝트</span>
-            </ProjectCategory>
-            <ProjectName>
-              <span>
-                음악 스트리밍 앱<span>&#40;UI only&#41;</span>
-              </span>
-            </ProjectName>
-            <Projectintro>
-              <span>SPA로 구현해본 음악 스트리밍 앱</span>
-            </Projectintro>
-          </ProjectDesc>
-        </EachProject>
-
-        <EachProject>
-          <ProjectImgBox>
-            <ProjectImg
-              src={comingsoon}
-              alt='사이드 프로젝트 준비중'
-              width='240'
-              height='370'
-            />
-          </ProjectImgBox>
-
-          <ProjectDesc>
-            <ProjectCategory>
-              <span>사이드 프로젝트</span>
-            </ProjectCategory>
-            <ProjectName>
-              <span>준비중...</span>
-            </ProjectName>
-            <Projectintro>
-              <span>아이디어가 샘솟는 중...</span>
-            </Projectintro>
-          </ProjectDesc>
-        </EachProject>
-        <EachProject></EachProject>
+            <ProjectDesc>
+              <ProjectCategory>
+                <span>{d.category}</span>
+              </ProjectCategory>
+              <ProjectName>
+                <span>
+                  {d.name}
+                  <span>{d.type}</span>
+                </span>
+              </ProjectName>
+              <Projectintro>
+                <span>{d.description}</span>
+              </Projectintro>
+            </ProjectDesc>
+          </EachProject>
+        ))}
       </EachProjectContainer>
-      {/* </div> */}
     </ProjectContainer>
   );
 }
