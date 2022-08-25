@@ -24,8 +24,8 @@ const svg = {
 export const SVG = (props) => {
   return (
     <motion.svg
-      width={props.size ? props.size : '2rem'}
-      height={props.size ? props.size : '2rem'}
+      width={props.size ? props.size : '34px'}
+      height={props.size ? props.size : '34px'}
       role='img'
       viewBox='0 0 24 24'
       fill={props.color}

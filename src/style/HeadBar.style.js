@@ -53,7 +53,13 @@ export const ContactBox = styled.div`
   flex-direction: column;
   margin: 0;
 
+  & > * {
+    background-color: ${palette.bgColor};
+    border-radius: 50%;
+    padding: 3px;
+  }
+
   & > *:not(:last-child) {
-    padding-bottom: 15px;
+    margin-bottom: 15px;
   }
 `;
