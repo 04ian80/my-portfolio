@@ -62,7 +62,7 @@ export function Project() {
               <EachProject
                 key={d.id}
                 style={{ opacity: d.name === '준비중...' && 0.6 }}
-                whileHover={{ scale: d.name !== '준비중...' ? 1.1 : null }}
+                whileHover={{ scale: d.name !== '준비중...' ? 1.1 : 1 }}
               >
                 <ProjectImgBox>
                   <ProjectImg
