@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import styled from 'styled-components';
-import { HashLink } from 'react-router-hash-link';
-import { skillData as data } from '../data/SkillData';
+import { motion } from 'framer-motion';
 import { SVG } from '../icon/SVG';
 import * as palette from '../style/Variables';
+import { skillData as data } from '../data/SkillData';
+import { SkillInit, SkillReducer } from '../store/SkillReducer';
+import { CaretLeft, CaretRight } from 'react-bootstrap-icons';
 
 export function Skills() {
+  const TOTAL_SLIDES = 6;
+  const WIDTH = 300;
+
+  const [state, dispatch] = useReducer(SkillReducer, SkillInit);
+
   return (
     <>
       <SkillContainer id='skill'>
@@ -18,23 +25,55 @@ export function Skills() {
         <SkillCard>
           <SkillList>
             {data.map((d) => (
-              <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
+              <motion.div
+                key={d.id}
+                onClick={() => {
+                  dispatch({ type: d.id });
+                }}
+                style={{ cursor: 'pointer' }}
+                whileHover={{ scale: 1.1 }}
+              >
+                <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
+              </motion.div>
             ))}
           </SkillList>
 
           <SkillWrapper>
             <SkillDesc>
               {data.map((d) => (
-                <EachCard key={d.id}>
-                  <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
-                  <span>{d.skillName}</span>
+                <EachCard
+                  key={d.id}
+                  transform={state}
+                  style={{ transform: `translateX(${state.current}px)` }}
+                >
+                  <SkillIcon>
+                    <SVG
+                      name={d.svg.name}
+                      color={d.svg.color}
+                      size='35px'
+                    ></SVG>
+                    <span>{d.skillName}</span>
+                  </SkillIcon>
                   <div>{d.description}</div>
                 </EachCard>
               ))}
             </SkillDesc>
-          </SkillWrapper>
 
-          <ControlBtn></ControlBtn>
+            <ControlBtn>
+              <PrevSlideBtn
+                onClick={() => {
+                  dispatch({ type: 'PREV' });
+                  console.log(state.current);
+                }}
+              />
+              <NextSlideBtn
+                onClick={() => {
+                  dispatch({ type: 'NEXT' });
+                  console.log(state.current);
+                }}
+              />
+            </ControlBtn>
+          </SkillWrapper>
         </SkillCard>
       </SkillContainer>
     </>
@@ -66,6 +105,7 @@ const Title = styled.div`
 `;
 
 const SkillCard = styled.div`
+  position: relative;
   display: flex;
   margin: 0 auto;
 `;
@@ -86,8 +126,8 @@ const SkillWrapper = styled.div`
   height: 400px;
   overflow: hidden;
   margin-left: 15px;
-  box-sizing: border-boxs;
-  background-color: pink;
+  border: 2px solid ${palette.brownColor};
+  border-radius: ${palette.defaultRadius};
 `;
 
 const SkillDesc = styled.div`
@@ -95,9 +135,39 @@ const SkillDesc = styled.div`
 `;
 
 const EachCard = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 300px;
   height: 400px;
-  padding: 10px;
+  /* transform: translateX(-300px); */
+  transform: translateX(${(props) => (props.transform ? props : null)}px);
 `;
 
-const ControlBtn = styled.div``;
+const SkillIcon = styled.div`
+  margin: 10px 0 0 10px;
+`;
+
+const ControlBtn = styled.div`
+  position: absolute;
+  bottom: 0px;
+  width: 300px;
+  height: 50px;
+  padding: 30px 0;
+  border-top: 2px solid ${palette.brownColor};
+  /* background-color: pink; */
+
+  & > * {
+    position: absolute;
+    color: ${palette.brownColor};
+    font-size: 50px;
+    /* background-color: teal; */
+  }
+`;
+
+const PrevSlideBtn = styled(CaretLeft)`
+  left: 80px;
+`;
+
+const NextSlideBtn = styled(CaretRight)`
+  right: 80px;
+`;
