@@ -4,17 +4,20 @@ import Home from './components/Home';
 import { Mystory } from './components/Mystory';
 import styled from 'styled-components';
 import * as palette from './style/Variables';
+import { HeadBarContext } from './store/HeadBarContext';
 
 export default function App() {
   return (
-    <HomeContainer>
-      <BrowserRouter>
-        <Routes>
-          <Route path={'/'} element={<Home />} />
-          <Route path={'/mystory'} element={<Mystory />} />
-        </Routes>
-      </BrowserRouter>
-    </HomeContainer>
+    <HeadBarContext>
+      <HomeContainer>
+        <BrowserRouter>
+          <Routes>
+            <Route path={'/'} element={<Home />} />
+            <Route path={'/mystory'} element={<Mystory />} />
+          </Routes>
+        </BrowserRouter>
+      </HomeContainer>
+    </HeadBarContext>
   );
 }
 

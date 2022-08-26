@@ -1,4 +1,5 @@
-import React, { Fragment, useReducer } from 'react';
+import React, { Fragment, useState, useReducer, useContext } from 'react';
+import { UserContext } from '../store/HeadBarContext';
 import Media from 'react-media';
 import * as C from '../style/HeadBar.style';
 import { LOGO, SVG } from '../icon/SVG';
@@ -7,6 +8,8 @@ import { List } from 'react-bootstrap-icons';
 import * as palette from '../style/Variables';
 
 export const HeadBar = () => {
+  const value = useContext(UserContext);
+  const { menubar, open } = value;
   const [iconColor, setIconColor] = useReducer(iconColorReducer, initIconColor);
 
   return (
@@ -32,7 +35,28 @@ export const HeadBar = () => {
                 <>
                   <List
                     style={{ color: palette.subFontColor, fontSize: '2rem' }}
+                    onClick={(e) => {
+                      open(true);
+                      document.body.style.overflow = 'hidden';
+                    }}
                   />
+                  {menubar ? (
+                    <>
+                      <C.Disscrollable
+                        onClick={() => {
+                          open(false);
+                          document.body.style.overflow = null;
+                        }}
+                      ></C.Disscrollable>
+                      <C.Menubar>
+                        <C.MenubarWrapper>
+                          <span>자기소개</span>
+                          <span>기술스택</span>
+                          <span>프로젝트</span>
+                        </C.MenubarWrapper>
+                      </C.Menubar>
+                    </>
+                  ) : null}
                 </>
               )}
               {matches.large && (

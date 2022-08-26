@@ -66,3 +66,33 @@ export const ContactBox = styled.div`
     margin-bottom: 15px;
   }
 `;
+
+export const Menubar = styled.div`
+  position: fixed;
+`;
+
+export const MenubarWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  padding: 24px;
+  z-index: 1000;
+  background-color: #fff;
+`;
+
+export const Disscrollable = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.5);
+`;
