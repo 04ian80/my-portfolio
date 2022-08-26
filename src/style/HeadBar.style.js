@@ -58,8 +58,8 @@ export const ContactBox = styled.div`
 
   & > * {
     background-color: ${palette.bgColor};
-    border-radius: 50%;
-    padding: 3px;
+    border-radius: 10px;
+    padding: 2px;
   }
 
   & > *:not(:last-child) {
