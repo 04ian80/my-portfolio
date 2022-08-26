@@ -8,7 +8,7 @@ import { skillData as data } from '../data/SkillData';
 
 export function Skills() {
   return (
-    <SkillIconContainer id='skill' role='tablist'>
+    <SkillIconContainer id='skill' role='feed' aria-label='기술스택 페이지'>
       <CategoryTitle>기술스택</CategoryTitle>
       <div
         style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
@@ -50,7 +50,6 @@ export function Skills() {
                 <SkillEach
                   key={d.id}
                   whileHover={{ scale: 1.1 }}
-                  role='tab'
                   aria-label={d.skillName}
                 >
                   <SkillIcon>
@@ -58,6 +57,8 @@ export function Skills() {
                       name={d.svg.name}
                       color={d.svg.color}
                       size='60px'
+                      role='img'
+                      aria-label={d.skillName}
                     ></SVG>
                     <span>{d.skillName}</span>
                   </SkillIcon>
@@ -95,7 +96,7 @@ export function Skills() {
   );
 }
 
-const SkillIconContainer = styled.div`
+const SkillIconContainer = styled.section`
   position: relative;
   display: flex;
   align-items: center;
@@ -116,7 +117,7 @@ const CategoryTitle = styled.span`
   color: ${palette.subFontColor};
 `;
 
-const SkillEach = styled(motion.div)`
+const SkillEach = styled(motion.article)`
   display: flex;
   flex-direction: column;
   margin: 2rem;

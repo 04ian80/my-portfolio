@@ -10,13 +10,13 @@ export function Project() {
   const [state, dispatch] = useReducer(categoryReducer, initCategory);
 
   return (
-    <ProjectContainer id='project'>
+    <ProjectContainer id='project' aria-label='프로젝트 페이지'>
       <ProjectHeader>
         <CategoryTitle>
           <span>프로젝트</span>
         </CategoryTitle>
 
-        <ProjectCategoryAll>
+        <ProjectCategoryAll role='tablist' aria-label='프로젝트 카테고리'>
           <span
             style={{
               backgroundColor: state.btnColor.all,
@@ -26,6 +26,8 @@ export function Project() {
             onClick={() => {
               dispatch({ type: 'ALL' });
             }}
+            role='tab'
+            tabIndex='0'
           >
             전체보기
           </span>
@@ -38,6 +40,8 @@ export function Project() {
             onClick={() => {
               dispatch({ type: 'SIDE' });
             }}
+            role='tab'
+            tabIndex='1'
           >
             사이드 프로젝트
           </span>
@@ -50,6 +54,8 @@ export function Project() {
             onClick={() => {
               dispatch({ type: 'MINI' });
             }}
+            role='tab'
+            tabIndex='2'
           >
             미니 프로젝트
           </span>

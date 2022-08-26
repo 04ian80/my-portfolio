@@ -13,7 +13,7 @@ export function Introduce() {
   ];
 
   return (
-    <I.MainHeader id='introduce'>
+    <I.MainHeader id='introduce' aria-label='자기소개 페이지'>
       <I.ImgBox>
         <I.ProfileImg
           src={profileImg}
