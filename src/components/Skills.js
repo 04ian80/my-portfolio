@@ -18,19 +18,21 @@ export function Skills() {
         <SkillCard>
           <SkillList>
             {data.map((d) => (
-              <HashLink to={'/#skill/' + d.skillName}>
-                <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
-              </HashLink>
+              <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
             ))}
           </SkillList>
 
-          <SkillDesc>
-            {data.map((d) => (
-              <EachCard>
-                <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
-              </EachCard>
-            ))}
-          </SkillDesc>
+          <SkillWrapper>
+            <SkillDesc>
+              {data.map((d) => (
+                <EachCard key={d.id}>
+                  <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
+                  <span>{d.skillName}</span>
+                  <div>{d.description}</div>
+                </EachCard>
+              ))}
+            </SkillDesc>
+          </SkillWrapper>
 
           <ControlBtn></ControlBtn>
         </SkillCard>
@@ -78,17 +80,24 @@ const SkillList = styled.div`
   }
 `;
 
-const SkillDesc = styled.div`
+const SkillWrapper = styled.div`
   display: flex;
   width: 300px;
   height: 400px;
-  margin-left: 15px;
-  background-color: red;
   overflow: hidden;
+  margin-left: 15px;
+  box-sizing: border-boxs;
+  background-color: pink;
+`;
+
+const SkillDesc = styled.div`
+  display: flex;
 `;
 
 const EachCard = styled.div`
   width: 300px;
+  height: 400px;
+  padding: 10px;
 `;
 
 const ControlBtn = styled.div``;
