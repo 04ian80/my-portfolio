@@ -85,16 +85,8 @@ export const MainTitle = styled.div`
   display: block;
   padding: 1rem;
   color: ${palette.fontColor};
+  font-size: 3rem;
 
-  @media ${device.xSmall} {
-    font-size: 1.8rem;
-  }
-  @media ${device.small} {
-    font-size: 3rem;
-  }
-  @media ${device.medium} {
-    font-size: 4rem;
-  }
   @media ${device.large} {
     font-size: 5rem;
   }
