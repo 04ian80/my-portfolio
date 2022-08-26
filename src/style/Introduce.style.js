@@ -99,7 +99,7 @@ export const MainTitle = styled.div`
     font-size: 5rem;
   }
 
-  & > span:nth-child(3) {
+  & > span:nth-child(4) {
     opacity: 0.7;
     background: linear-gradient(to right, #5ac8df, #dd7990);
     -webkit-background-clip: text;
@@ -157,4 +157,13 @@ export const TypeItBox = styled.div`
     font-size: 2rem;
     width: 36rem;
   }
+`;
+
+export const screenReadersOnly = styled.div`
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
 `;

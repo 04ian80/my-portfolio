@@ -27,6 +27,8 @@ export const TopButton = () => {
           animate={{
             y: ['0px', '-40px', '-30px', '-34px', '-30px'],
           }}
+          role='button'
+          aria-label='스크린 최상단으로 이동'
         >
           <CaretUp style={{ transform: 'translateY(-2px)' }} />
         </TopBtn>

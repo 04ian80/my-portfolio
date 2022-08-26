@@ -26,16 +26,19 @@ export const Nav = styled(motion.nav)`
 export const LogoContainer = styled(Link)``;
 
 export const NavList = styled.ul`
-  margin: 0 30px;
   padding: 0;
   font-size: 1rem;
   font-weight: 500;
   flex-shrink: 0;
 
+  & > * {
+    margin: 0 10px;
+  }
+
   & > *:not(:last-child)::after {
     content: '/';
     color: ${palette.pointColor};
-    margin: 0 30px;
+    margin-left: 30px;
   }
 `;
 

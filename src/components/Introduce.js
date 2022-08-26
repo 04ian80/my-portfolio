@@ -44,6 +44,8 @@ export function Introduce() {
             setIsHover(false);
           }}
           whileHover={{ width: '100px' }}
+          role='button'
+          aria-label='나의 대한 소개 자세히보기'
         >
           {!isHover ? <span>+</span> : null}
 
@@ -57,8 +59,13 @@ export function Introduce() {
 
       <I.MainTitle>
         <span>저는</span>
+        <I.screenReadersOnly>
+          새로운 것에 관심이 많아 배우는 것을 좋아하는, 사용자 경험을
+          1순위로하여 개발하는, 새로운 도전에 있어서 적극적으로 즐기는
+        </I.screenReadersOnly>
         <I.TypeItBox>
           <TypeIt
+            aria-hidden='true'
             options={{ loop: true }}
             getBeforeInit={(instance) => {
               instance

@@ -8,7 +8,7 @@ import { skillData as data } from '../data/SkillData';
 
 export function Skills() {
   return (
-    <SkillIconContainer id='skill'>
+    <SkillIconContainer id='skill' role='tablist'>
       <CategoryTitle>기술스택</CategoryTitle>
       <div
         style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
@@ -17,7 +17,12 @@ export function Skills() {
           {data.map(
             (d) =>
               d.id < 3 && (
-                <SkillEach key={d.id} whileHover={{ scale: 1.1 }}>
+                <SkillEach
+                  key={d.id}
+                  whileHover={{ scale: 1.1 }}
+                  role='tab'
+                  aria-label={d.skillName}
+                >
                   <SkillIcon>
                     <SVG
                       name={d.svg.name}
@@ -26,7 +31,10 @@ export function Skills() {
                     ></SVG>
                     <span>{d.skillName}</span>
                   </SkillIcon>
-                  <SkillDescContainer animate={{ y: ['10px', '0px'] }}>
+                  <SkillDescContainer
+                    animate={{ y: ['10px', '0px'] }}
+                    role='tab'
+                  >
                     {d.description}
                   </SkillDescContainer>
                 </SkillEach>
@@ -39,7 +47,12 @@ export function Skills() {
             (d) =>
               d.id >= 3 &&
               d.id < 5 && (
-                <SkillEach key={d.id} whileHover={{ scale: 1.1 }}>
+                <SkillEach
+                  key={d.id}
+                  whileHover={{ scale: 1.1 }}
+                  role='tab'
+                  aria-label={d.skillName}
+                >
                   <SkillIcon>
                     <SVG
                       name={d.svg.name}
@@ -61,7 +74,12 @@ export function Skills() {
         {data.map(
           (d) =>
             d.id >= 5 && (
-              <SkillEach key={d.id} whileHover={{ scale: 1.1 }}>
+              <SkillEach
+                key={d.id}
+                whileHover={{ scale: 1.1 }}
+                role='tab'
+                aria-label={d.skillName}
+              >
                 <SkillIcon>
                   <SVG name={d.svg.name} color={d.svg.color} size='60px'></SVG>
                   <span>{d.skillName}</span>
