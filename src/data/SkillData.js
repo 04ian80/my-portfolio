@@ -15,6 +15,22 @@ export const skillData = [
   {
     id: 1,
     svg: {
+      name: 'HTML5',
+      color: '#E34F26',
+    },
+    skillName: 'HTML',
+    description: (
+      <ul>
+        <li>웹 접근성을 고려한 WAI-ARIA 사용</li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    ),
+  },
+  {
+    id: 2,
+    svg: {
       name: 'CSS3',
       color: '#1572B6',
     },
@@ -29,22 +45,6 @@ export const skillData = [
             <span>Sass</span>로 더욱 다이나믹한 스타일링
           </SassLink>
         </li>
-      </ul>
-    ),
-  },
-  {
-    id: 2,
-    svg: {
-      name: 'HTML5',
-      color: '#E34F26',
-    },
-    skillName: 'HTML',
-    description: (
-      <ul>
-        <li>웹 접근성을 고려한 WAI-ARIA 사용</li>
-        <li></li>
-        <li></li>
-        <li></li>
       </ul>
     ),
   },
