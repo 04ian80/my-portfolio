@@ -103,7 +103,6 @@ export function Project() {
 }
 
 const ProjectContainer = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;

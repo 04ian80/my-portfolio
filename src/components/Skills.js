@@ -1,165 +1,94 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SVG } from '../icon/SVG';
-import { motion } from 'framer-motion';
 import { HashLink } from 'react-router-hash-link';
-import * as palette from '../style/Variables';
 import { skillData as data } from '../data/SkillData';
+import { SVG } from '../icon/SVG';
+import * as palette from '../style/Variables';
 
 export function Skills() {
   return (
-    <SkillIconContainer id='skill' role='feed' aria-label='기술스택 페이지'>
-      <CategoryTitle>기술스택</CategoryTitle>
-      <div
-        style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
-      >
-        <RowSkillIcon>
-          {data.map(
-            (d) =>
-              d.id < 3 && (
-                <SkillEach
-                  key={d.id}
-                  whileHover={{ scale: 1.1 }}
-                  role='tab'
-                  aria-label={d.skillName}
-                >
-                  <SkillIcon>
-                    <SVG
-                      name={d.svg.name}
-                      color={d.svg.color}
-                      size='60px'
-                    ></SVG>
-                    <span>{d.skillName}</span>
-                  </SkillIcon>
-                  <SkillDescContainer
-                    animate={{ y: ['10px', '0px'] }}
-                    role='tab'
-                  >
-                    {d.description}
-                  </SkillDescContainer>
-                </SkillEach>
-              )
-          )}
-        </RowSkillIcon>
+    <>
+      <SkillContainer id='skill'>
+        <SkillHeader>
+          <Title>
+            <span>기술스택</span>
+          </Title>
+        </SkillHeader>
 
-        <RowSkillIcon>
-          {data.map(
-            (d) =>
-              d.id >= 3 &&
-              d.id < 5 && (
-                <SkillEach
-                  key={d.id}
-                  whileHover={{ scale: 1.1 }}
-                  aria-label={d.skillName}
-                >
-                  <SkillIcon>
-                    <SVG
-                      name={d.svg.name}
-                      color={d.svg.color}
-                      size='60px'
-                      role='img'
-                      aria-label={d.skillName}
-                    ></SVG>
-                    <span>{d.skillName}</span>
-                  </SkillIcon>
-                  <SkillDescContainer animate={{ y: ['10px', '0px'] }}>
-                    {d.description}
-                  </SkillDescContainer>
-                </SkillEach>
-              )
-          )}
-        </RowSkillIcon>
-      </div>
+        <SkillCard>
+          <SkillList>
+            {data.map((d) => (
+              <HashLink to={'/#skill/' + d.skillName}>
+                <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
+              </HashLink>
+            ))}
+          </SkillList>
 
-      <RowSkillIcon>
-        {data.map(
-          (d) =>
-            d.id >= 5 && (
-              <SkillEach
-                key={d.id}
-                whileHover={{ scale: 1.1 }}
-                role='tab'
-                aria-label={d.skillName}
-              >
-                <SkillIcon>
-                  <SVG name={d.svg.name} color={d.svg.color} size='60px'></SVG>
-                  <span>{d.skillName}</span>
-                </SkillIcon>
-                <SkillDescContainer animate={{ y: ['10px', '0px'] }}>
-                  {d.description}
-                </SkillDescContainer>
-              </SkillEach>
-            )
-        )}
-      </RowSkillIcon>
-    </SkillIconContainer>
+          <SkillDesc>
+            {data.map((d) => (
+              <EachCard>
+                <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
+              </EachCard>
+            ))}
+          </SkillDesc>
+
+          <ControlBtn></ControlBtn>
+        </SkillCard>
+      </SkillContainer>
+    </>
   );
 }
 
-const SkillIconContainer = styled.section`
-  position: relative;
+const SkillContainer = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  padding: 10rem 0;
+  justify-content: flex-start;
   min-height: 100vh;
   background-color: #fafafa;
 `;
 
-const CategoryTitle = styled.span`
-  position: absolute;
-  top: 7rem;
-  left: 4rem;
+const SkillHeader = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 8rem 4rem 2rem;
+`;
+
+const Title = styled.div`
   padding: 0 20px;
   border-bottom: 1px solid ${palette.pointColor};
   font-size: 2rem;
   font-weight: 500;
   color: ${palette.subFontColor};
+  flex-shrink: 0;
 `;
 
-const SkillEach = styled(motion.article)`
+const SkillCard = styled.div`
   display: flex;
-  flex-direction: column;
-  margin: 2rem;
+  margin: 0 auto;
 `;
 
-const SkillIcon = styled.div`
+const SkillList = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 0 1rem;
-  padding-bottom: 1rem;
 
-  & > span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 6px;
-    padding: 3px 10px;
-    border-radius: 20px;
-    background-color: ${palette.lightGray};
-    font-weight: 500;
+  & > * {
+    margin-bottom: 15px;
   }
 `;
 
-const RowSkillIcon = styled.div`
+const SkillDesc = styled.div`
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
+  width: 300px;
+  height: 400px;
+  margin-left: 15px;
+  background-color: red;
+  overflow: hidden;
 `;
 
-const SkillDescContainer = styled(motion.div)`
-  padding-right: 1rem;
-  width: 230px;
-  height: 10rem;
-  border: 2px solid ${palette.pointColor};
-  border-radius: ${palette.defaultRadius};
-  color: ${palette.fontColor};
-  background-color: #fff;
-  box-shadow: ${palette.defaultShadow};
+const EachCard = styled.div`
+  width: 300px;
 `;
+
+const ControlBtn = styled.div``;
