@@ -1,8 +1,10 @@
 # 2022년 Portfolio
 
+React의 함수형 컴포넌트를 사용하여 Hook으로 구현해본 포트폴리오 입니다.
+
 ## 기술스택
 
-- React (useState, useReducer)
+- React (useState, useReducer, useContext)
 - React-Router (react-router-hash-link)
 
 ## 라이브러리
