@@ -6,6 +6,7 @@ import { LOGO, SVG } from '../icon/SVG';
 import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
 import { List } from 'react-bootstrap-icons';
 import * as palette from '../style/Variables';
+import { Link } from 'react-router-dom';
 
 export const HeadBar = () => {
   const value = useContext(UserContext);
@@ -94,8 +95,12 @@ export const HeadBar = () => {
                 <SVG name='gmail' color={iconColor.gmailColor} />
               </a>
             </C.ContactBox>
-            <span>홈</span>
-            <span>스토리</span>
+            <C.Menu to='/' whileHover={{ color: palette.fontColor }}>
+              홈
+            </C.Menu>
+            <C.Menu to='/mystory' whileHover={{ color: palette.fontColor }}>
+              스토리
+            </C.Menu>
           </C.MenubarWrapper>
         </C.Menubar>
       </C.Nav>

@@ -62,6 +62,12 @@ export const Menubar = styled.div`
   position: fixed;
 `;
 
+export const Menu = styled(motion(Link))`
+  text-decoration: none;
+  color: ${palette.subFontColor};
+  font-size: 1.5rem;
+`;
+
 export const MenubarWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
