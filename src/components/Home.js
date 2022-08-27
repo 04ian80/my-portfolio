@@ -6,7 +6,7 @@ import { Skills } from './Skills';
 import { Project } from './Project';
 import { UserContext } from '../store/HeadBarContext';
 
-function Home() {
+export default function Home() {
   const value = useContext(UserContext);
   const { menubar, open } = value;
 
@@ -20,5 +20,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;

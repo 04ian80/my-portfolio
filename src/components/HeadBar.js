@@ -1,12 +1,10 @@
-import React, { Fragment, useState, useReducer, useContext } from 'react';
+import React, { useReducer, useContext } from 'react';
 import { UserContext } from '../store/HeadBarContext';
-import Media from 'react-media';
 import * as C from '../style/HeadBar.style';
 import { LOGO, SVG } from '../icon/SVG';
 import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
 import { List } from 'react-bootstrap-icons';
 import * as palette from '../style/Variables';
-import { Link } from 'react-router-dom';
 
 export const HeadBar = () => {
   const value = useContext(UserContext);

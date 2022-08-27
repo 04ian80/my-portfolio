@@ -34,18 +34,6 @@ const StoryContainer = styled.div`
 
 const MainStory = styled.section`
   padding: 100px 64px;
-  /* margin: 0 auto; */
-  /* padding: 140px 24px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  width: 100%; */
-
-  /* @media ${palette.device.large} {
-    padding: 140px 16px;
-    margin: 0 auto;
-  } */
-  /* display: flex;
-  flex-direction: column; */
 `;
 
 const StoryHeader = styled.div`

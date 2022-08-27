@@ -1,79 +1,38 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import { SVG } from '../icon/SVG';
+import { motion } from 'framer-motion';
+import { HashLink } from 'react-router-hash-link';
 import * as palette from '../style/Variables';
 import { skillData as data } from '../data/SkillData';
-import { SkillInit, SkillReducer } from '../store/SkillReducer';
-import { CaretLeft, CaretRight } from 'react-bootstrap-icons';
 
 export function Skills() {
-  const [state, dispatch] = useReducer(SkillReducer, SkillInit);
-
   return (
-    <>
-      <SkillContainer id='skill'>
-        <SkillHeader>
-          <Title>
-            <h2>기술스택</h2>
-          </Title>
-        </SkillHeader>
-
-        <SkillCard>
-          <SkillList>
-            {data.map((d) => (
-              <motion.div
-                key={d.id}
-                onClick={() => {
-                  dispatch({ type: d.id });
-                  console.log(state.current);
-                }}
-                style={{ cursor: 'pointer' }}
-                whileHover={{ scale: 1.1 }}
-              >
-                <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
-              </motion.div>
-            ))}
-          </SkillList>
-
-          <SkillWrapper>
-            <SkillDesc>
-              {data.map((d) => (
-                <EachCard
-                  key={d.id}
-                  style={{ transform: `translateX(${state.current}px)` }}
-                >
-                  <SkillIcon>
-                    <SVG
-                      name={d.svg.name}
-                      color={d.svg.color}
-                      size='35px'
-                    ></SVG>
-                    <span>{d.skillName}</span>
-                  </SkillIcon>
-                  <div>{d.description}</div>
-                </EachCard>
-              ))}
-            </SkillDesc>
-
-            <ControlBtn>
-              <PrevSlideBtn
-                onClick={() => {
-                  dispatch({ type: 'PREV' });
-                  console.log(state.current);
-                }}
-              />
-              <NextSlideBtn
-                onClick={() => {
-                  dispatch({ type: 'NEXT' });
-                  console.log(state.current);
-                }}
-              />
-            </ControlBtn>
-          </SkillWrapper>
-        </SkillCard>
-      </SkillContainer>
-    </>
+    <SkillContainer id='skill' role='feed' aria-label='기술스택 페이지'>
+      <SkillHeader>
+        <Title>
+          <span>기술스택</span>
+        </Title>
+      </SkillHeader>
+      <SkillBox>
+        {data.map((d) => (
+          <SkillEach
+            key={d.id}
+            whileHover={{ scale: 1.1 }}
+            role='tab'
+            aria-label={d.skillName}
+          >
+            <SkillIcon>
+              <SVG name={d.svg.name} color={d.svg.color} size='40px'></SVG>
+              <span>{d.skillName}</span>
+            </SkillIcon>
+            <SkillDescContainer animate={{ y: ['10px', '0px'] }} role='tab'>
+              <SkillList>{d.description}</SkillList>
+            </SkillDescContainer>
+          </SkillEach>
+        ))}
+      </SkillBox>
+    </SkillContainer>
   );
 }
 
@@ -106,69 +65,61 @@ const Title = styled.div`
   }
 `;
 
-const SkillCard = styled.div`
-  position: relative;
-  display: flex;
+const SkillBox = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    'st th'
+    'st th';
+  gap: 16px;
   margin: 0 auto;
-`;
+  flex-wrap: wrap;
 
-const SkillList = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  & > * {
-    margin-bottom: 15px;
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'st'
+      'st'
+      'st'
+      'st'
+      'st'
+      'st';
+    gap: 16px;
   }
 `;
 
-const SkillWrapper = styled.div`
-  display: flex;
-  width: 300px;
-  height: 400px;
-  overflow: hidden;
-  margin-left: 15px;
-  border: 2px solid ${palette.brownColor};
-  border-radius: ${palette.defaultRadius};
-`;
-
-const SkillDesc = styled.div`
-  display: flex;
-`;
-
-const EachCard = styled.div`
-  display: flex;
+const SkillEach = styled(motion.article)`
   flex-direction: column;
-  width: 300px;
-  height: 400px;
-  /* transform: translateX(-300px); */
+  margin-right: 100px;
 `;
 
 const SkillIcon = styled.div`
-  margin: 10px 0 0 10px;
-`;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin: 0 1rem;
+  padding-bottom: 1rem;
 
-const ControlBtn = styled.div`
-  position: absolute;
-  bottom: 0px;
-  width: 300px;
-  height: 50px;
-  padding: 30px 0;
-  border-top: 2px solid ${palette.brownColor};
-  /* background-color: pink; */
-
-  & > * {
-    position: absolute;
-    color: ${palette.brownColor};
-    font-size: 50px;
-    /* background-color: teal; */
+  span {
+    margin-left: 6px;
+    font-size: 20px;
+    font-weight: 500;
   }
 `;
 
-const PrevSlideBtn = styled(CaretLeft)`
-  left: 80px;
-`;
+const SkillDescContainer = styled(motion.div)``;
 
-const NextSlideBtn = styled(CaretRight)`
-  right: 80px;
+const SkillList = styled.ul`
+  list-style: none;
+  padding: 0;
+
+  & > * {
+    margin-bottom: 5px;
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 4px solid #eee;
+    font-size: 1.1rem;
+  }
 `;
