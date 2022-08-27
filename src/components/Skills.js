@@ -2,17 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { SVG } from '../icon/SVG';
 import { motion } from 'framer-motion';
-import { HashLink } from 'react-router-hash-link';
 import * as palette from '../style/Variables';
 import { skillData as data } from '../data/SkillData';
+import { Title } from './Title';
 
 export function Skills() {
   return (
     <SkillContainer id='skill' role='feed' aria-label='기술스택 페이지'>
       <SkillHeader>
-        <Title>
-          <span>기술스택</span>
-        </Title>
+        <Title title={'기술스택'}></Title>
       </SkillHeader>
       <SkillBox>
         {data.map((d) => (
@@ -48,22 +46,23 @@ const SkillHeader = styled.div`
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 8rem 4rem 2rem;
+  /* padding: 8rem 10rem 2rem; */
+  padding: 150px 200px 64px;
 `;
 
-const Title = styled.div`
-  padding: 0 20px;
-  border-bottom: 1px solid ${palette.pointColor};
-  color: ${palette.subFontColor};
-  flex-shrink: 0;
+// const Title = styled.div`
+//   padding: 0 20px;
+//   border-bottom: 1px solid ${palette.pointColor};
+//   color: ${palette.subFontColor};
+//   flex-shrink: 0;
 
-  & > * {
-    padding: 0;
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 400;
-  }
-`;
+//   & > * {
+//     padding: 0;
+//     margin: 0;
+//     font-size: 2rem;
+//     font-weight: 400;
+//   }
+// `;
 
 const SkillBox = styled.div`
   display: grid;

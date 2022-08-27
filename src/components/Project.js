@@ -5,6 +5,7 @@ import { projectData as data } from '../data/ProjectData';
 import { categoryReducer, initCategory } from '../store/ProjectReducer';
 import { motion } from 'framer-motion';
 import { device } from '../style/Variables';
+import { Title } from './Title';
 
 export function Project() {
   const [state, dispatch] = useReducer(categoryReducer, initCategory);
@@ -12,9 +13,7 @@ export function Project() {
   return (
     <ProjectContainer id='project' aria-label='프로젝트 페이지'>
       <ProjectHeader>
-        <Title>
-          <h2>프로젝트</h2>
-        </Title>
+        <Title title={'프로젝트'}></Title>
 
         <ProjectCategoryAll role='tablist' aria-label='프로젝트 카테고리'>
           <span
@@ -112,7 +111,7 @@ const ProjectContainer = styled.div`
 const ProjectHeader = styled.div`
   display: flex;
   align-items: flex-start;
-  padding: 8rem 4rem 0;
+  padding: 150px 200px 64px;
   flex-wrap: wrap;
 
   & > *:not(:last-child) {
@@ -120,19 +119,19 @@ const ProjectHeader = styled.div`
   }
 `;
 
-const Title = styled.div`
-  padding: 0 20px;
-  border-bottom: 1px solid ${palette.pointColor};
-  color: ${palette.subFontColor};
-  flex-shrink: 0;
+// const Title = styled.div`
+//   padding: 0 20px;
+//   border-bottom: 1px solid ${palette.pointColor};
+//   color: ${palette.subFontColor};
+//   flex-shrink: 0;
 
-  & > * {
-    padding: 0;
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 400;
-  }
-`;
+//   & > * {
+//     padding: 0;
+//     margin: 0;
+//     font-size: 2rem;
+//     font-weight: 400;
+//   }
+// `;
 
 const ProjectCategoryAll = styled.div`
   display: flex;
