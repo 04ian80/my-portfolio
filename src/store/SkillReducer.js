@@ -39,12 +39,12 @@ export const SkillReducer = (state, action) => {
       break;
     case 'PREV':
       return {
-        current: state.current >= -0 ? -1500 : state.current + Math.abs(WIDTH),
+        current: state.current === 0 ? -1500 : state.current + Math.abs(WIDTH),
       };
       break;
     case 'NEXT':
       return {
-        current: state.current <= -1499 ? 1 : state.current - Math.abs(WIDTH),
+        current: state.current === -1500 ? 0 : state.current - Math.abs(WIDTH),
       };
       break;
     default:

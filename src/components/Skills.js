@@ -15,7 +15,7 @@ export function Skills() {
       <SkillContainer id='skill'>
         <SkillHeader>
           <Title>
-            <span>기술스택</span>
+            <h2>기술스택</h2>
           </Title>
         </SkillHeader>
 
@@ -26,6 +26,7 @@ export function Skills() {
                 key={d.id}
                 onClick={() => {
                   dispatch({ type: d.id });
+                  console.log(state.current);
                 }}
                 style={{ cursor: 'pointer' }}
                 whileHover={{ scale: 1.1 }}
@@ -40,7 +41,6 @@ export function Skills() {
               {data.map((d) => (
                 <EachCard
                   key={d.id}
-                  transform={state}
                   style={{ transform: `translateX(${state.current}px)` }}
                 >
                   <SkillIcon>
@@ -95,10 +95,15 @@ const SkillHeader = styled.div`
 const Title = styled.div`
   padding: 0 20px;
   border-bottom: 1px solid ${palette.pointColor};
-  font-size: 2rem;
-  font-weight: 500;
   color: ${palette.subFontColor};
   flex-shrink: 0;
+
+  & > * {
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+  }
 `;
 
 const SkillCard = styled.div`
@@ -137,7 +142,6 @@ const EachCard = styled.div`
   width: 300px;
   height: 400px;
   /* transform: translateX(-300px); */
-  transform: translateX(${(props) => (props.transform ? props : null)}px);
 `;
 
 const SkillIcon = styled.div`

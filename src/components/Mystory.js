@@ -6,31 +6,79 @@ import { HeadBar } from './HeadBar';
 
 export function Mystory() {
   return (
-    <EdContainer>
+    <StoryContainer>
       <HeadBar />
-      <EdBox>
-        <h2>My Story</h2>
-        <ul>
-          <li>개발을 시작하게 된 이유</li>
-          <li>내가 나의 생각하는 장점 vs 남이 생각하는 나의 장점</li>
-          <li></li>
-          <li></li>
-        </ul>
-      </EdBox>
-    </EdContainer>
+      <MainStory>
+        <StoryHeader>
+          <Title>
+            <h2>스토리</h2>
+          </Title>
+        </StoryHeader>
+        <StoryBox>
+          <StoryList>
+            <li>개발을 시작하게 된 이유</li>
+            <li>내가 생각하는 나의 장점 vs 남이 생각하는 나의 장점</li>
+            <li></li>
+            <li></li>
+          </StoryList>
+        </StoryBox>
+      </MainStory>
+    </StoryContainer>
   );
 }
 
-const EdContainer = styled.div`
-  display: flex;
-  align-items: center;
-  height: 100vh;
+const StoryContainer = styled.div`
+  margin: 0 auto;
+  max-width: 1024px;
 `;
 
-const EdBox = styled.div`
-  width: 100%;
-  padding: 20px;
-  margin: 5rem;
-  border: 2px solid ${palette.salmonColor};
-  border-radius: 30px;
+const MainStory = styled.section`
+  padding: 100px 64px;
+  /* margin: 0 auto; */
+  /* padding: 140px 24px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%; */
+
+  /* @media ${palette.device.large} {
+    padding: 140px 16px;
+    margin: 0 auto;
+  } */
+  /* display: flex;
+  flex-direction: column; */
+`;
+
+const StoryHeader = styled.div`
+  display: flex;
+`;
+
+const Title = styled.div`
+  padding: 0 20px;
+  border-bottom: 1px solid ${palette.pointColor};
+  color: ${palette.subFontColor};
+
+  & > * {
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+`;
+
+const StoryBox = styled.div`
+  margin-top: 32px;
+`;
+
+const StoryList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+
+  & > * {
+    margin-bottom: 30px;
+    padding-left: 10px;
+    border-left: 5px solid #eee;
+    font-size: 1.2rem;
+  }
 `;

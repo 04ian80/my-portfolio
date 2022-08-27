@@ -12,9 +12,9 @@ export function Project() {
   return (
     <ProjectContainer id='project' aria-label='프로젝트 페이지'>
       <ProjectHeader>
-        <CategoryTitle>
-          <span>프로젝트</span>
-        </CategoryTitle>
+        <Title>
+          <h2>프로젝트</h2>
+        </Title>
 
         <ProjectCategoryAll role='tablist' aria-label='프로젝트 카테고리'>
           <span
@@ -70,7 +70,6 @@ export function Project() {
                 key={d.id}
                 style={{ opacity: d.name === '준비중...' && 0.6 }}
                 whileHover={{ scale: d.name !== '준비중...' ? 1.1 : 1 }}
-                animate={{ y: ['20px', '10px'] }}
               >
                 <ProjectImgBox>
                   <ProjectImg
@@ -121,13 +120,18 @@ const ProjectHeader = styled.div`
   }
 `;
 
-const CategoryTitle = styled.div`
+const Title = styled.div`
   padding: 0 20px;
   border-bottom: 1px solid ${palette.pointColor};
-  font-size: 2rem;
-  font-weight: 500;
   color: ${palette.subFontColor};
   flex-shrink: 0;
+
+  & > * {
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+  }
 `;
 
 const ProjectCategoryAll = styled.div`

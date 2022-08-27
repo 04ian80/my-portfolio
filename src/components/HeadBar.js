@@ -12,6 +12,10 @@ export const HeadBar = () => {
   const value = useContext(UserContext);
   const { menubar, open } = value;
   const [iconColor, setIconColor] = useReducer(iconColorReducer, initIconColor);
+  const removeUnscroll = () => {
+    open(false);
+    document.body.style.overflow = null;
+  };
 
   const variants = {
     open: { x: [150, 0, 0] },
@@ -36,8 +40,7 @@ export const HeadBar = () => {
           <>
             <C.Unscroll
               onClick={() => {
-                open(false);
-                document.body.style.overflow = null;
+                removeUnscroll();
               }}
             ></C.Unscroll>
           </>
@@ -94,7 +97,7 @@ export const HeadBar = () => {
             <C.Menu
               to='/'
               onClick={() => {
-                open(false);
+                removeUnscroll();
               }}
               whileHover={{ color: palette.fontColor }}
             >
@@ -103,7 +106,7 @@ export const HeadBar = () => {
             <C.Menu
               to='/mystory'
               onClick={() => {
-                open(false);
+                removeUnscroll();
               }}
               whileHover={{ color: palette.fontColor }}
             >
