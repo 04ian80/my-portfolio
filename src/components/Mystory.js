@@ -1,10 +1,13 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
+import { HeadBar } from './HeadBar';
 
 export function Mystory() {
   return (
     <EdContainer>
+      <HeadBar />
       <EdBox>
         <h2>My Story</h2>
         <ul>
