@@ -46,23 +46,8 @@ const SkillHeader = styled.div`
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  /* padding: 8rem 10rem 2rem; */
-  padding: 150px 200px 64px;
+  padding: 100px 180px 32px;
 `;
-
-// const Title = styled.div`
-//   padding: 0 20px;
-//   border-bottom: 1px solid ${palette.pointColor};
-//   color: ${palette.subFontColor};
-//   flex-shrink: 0;
-
-//   & > * {
-//     padding: 0;
-//     margin: 0;
-//     font-size: 2rem;
-//     font-weight: 400;
-//   }
-// `;
 
 const SkillBox = styled.div`
   display: grid;
@@ -72,7 +57,8 @@ const SkillBox = styled.div`
     'st th'
     'st th';
   gap: 16px;
-  margin: 0 auto;
+  margin: 30px auto;
+  padding-left: 140px;
   flex-wrap: wrap;
 
   @media (max-width: 700px) {

@@ -111,28 +111,13 @@ const ProjectContainer = styled.div`
 const ProjectHeader = styled.div`
   display: flex;
   align-items: flex-start;
-  padding: 150px 200px 64px;
+  padding: 100px 180px 32px;
   flex-wrap: wrap;
 
   & > *:not(:last-child) {
     margin: 0 20px 20px 0;
   }
 `;
-
-// const Title = styled.div`
-//   padding: 0 20px;
-//   border-bottom: 1px solid ${palette.pointColor};
-//   color: ${palette.subFontColor};
-//   flex-shrink: 0;
-
-//   & > * {
-//     padding: 0;
-//     margin: 0;
-//     font-size: 2rem;
-//     font-weight: 400;
-//   }
-// `;
-
 const ProjectCategoryAll = styled.div`
   display: flex;
   justify-content: center;
@@ -157,13 +142,12 @@ const EachProjectContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  height: 100vh;
 `;
 
 const EachProject = styled(motion.div)`
   width: 250px;
   height: 370px;
-  margin: 2rem;
+  margin: 30px;
   border: 2px solid ${palette.brownColor};
   border-radius: ${palette.defaultRadius};
   box-shadow: ${palette.defaultShadow};
