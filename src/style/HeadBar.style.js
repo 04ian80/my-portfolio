@@ -48,22 +48,12 @@ export const NavLink = styled(Link)`
 `;
 
 export const ContactBox = styled.div`
-  position: absolute;
-  right: 1rem;
-  top: 6rem;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  margin: 0;
-
-  & > * {
-    background-color: ${palette.bgColor};
-    border-radius: 10px;
-    padding: 2px;
-  }
+  margin-bottom: 30px;
 
   & > *:not(:last-child) {
-    margin-bottom: 15px;
+    padding-right: 15px;
   }
 `;
 
