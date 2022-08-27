@@ -8,9 +8,6 @@ import { SkillInit, SkillReducer } from '../store/SkillReducer';
 import { CaretLeft, CaretRight } from 'react-bootstrap-icons';
 
 export function Skills() {
-  const TOTAL_SLIDES = 6;
-  const WIDTH = 300;
-
   const [state, dispatch] = useReducer(SkillReducer, SkillInit);
 
   return (

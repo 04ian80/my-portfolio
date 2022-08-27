@@ -58,23 +58,24 @@ export const ContactBox = styled.div`
 `;
 
 export const Menubar = styled.div`
+  display: block;
   position: fixed;
 `;
 
-export const MenubarWrapper = styled.div`
+export const MenubarWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 200px;
   padding: 24px;
   z-index: 1000;
   background-color: #fff;
 `;
 
-export const Disscrollable = styled.div`
+export const Unscroll = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
