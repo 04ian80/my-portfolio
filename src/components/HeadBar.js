@@ -95,10 +95,22 @@ export const HeadBar = () => {
                 <SVG name='gmail' color={iconColor.gmailColor} />
               </a>
             </C.ContactBox>
-            <C.Menu to='/' whileHover={{ color: palette.fontColor }}>
+            <C.Menu
+              to='/'
+              onClick={() => {
+                open(false);
+              }}
+              whileHover={{ color: palette.fontColor }}
+            >
               홈
             </C.Menu>
-            <C.Menu to='/mystory' whileHover={{ color: palette.fontColor }}>
+            <C.Menu
+              to='/mystory'
+              onClick={() => {
+                open(false);
+              }}
+              whileHover={{ color: palette.fontColor }}
+            >
               스토리
             </C.Menu>
           </C.MenubarWrapper>
