@@ -23,39 +23,6 @@ export const Nav = styled(motion.nav)`
 
 export const LogoContainer = styled(Link)``;
 
-export const ContactBox = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-
-  & > *:not(:last-child) {
-    padding-right: 15px;
-  }
-`;
-
-export const Menubar = styled.div`
-  display: block;
-  position: fixed;
-`;
-
-export const MenubarWrapper = styled(motion.div)`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  padding: 24px;
-  background-color: ${palette.bgColor};
-`;
-
-export const Menu = styled(motion(Link))`
-  text-decoration: none;
-  color: ${palette.subFontColor};
-  font-size: 1.5rem;
-`;
-
 export const Unscroll = styled(motion.div)`
   position: fixed;
   top: 0;
