@@ -10,6 +10,10 @@ export const HeadBar = () => {
   const value = useContext(UserContext);
   const { menubar, open } = value;
   const [iconColor, setIconColor] = useReducer(iconColorReducer, initIconColor);
+  const setUnscroll = () => {
+    open(true);
+    document.body.style.overflow = 'hidden';
+  };
   const removeUnscroll = () => {
     open(false);
     document.body.style.overflow = null;
@@ -30,8 +34,7 @@ export const HeadBar = () => {
         <List
           style={{ color: palette.subFontColor, fontSize: '2rem' }}
           onClick={() => {
-            open(true);
-            document.body.style.overflow = 'hidden';
+            setUnscroll();
           }}
         />
         {menubar ? (
