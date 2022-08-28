@@ -1,12 +1,18 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useReducer, useContext } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { HeadBar } from './HeadBar';
+import { UserContext } from '../store/HeadBarContext';
+import { CaretDownFill, CaretUpFill } from 'react-bootstrap-icons';
+import { StoryData as data } from '../data/StoryData';
 
 export function Mystory() {
+  const value = useContext(UserContext);
+  const { menubar } = value;
+  const [state, dispatch] = useReducer(reducer, initArg);
+
   return (
-    <StoryContainer>
+    <StoryContainer style={{ marginRight: menubar ? '23.5px' : null }}>
       <HeadBar />
       <MainStory>
         <StoryHeader>
@@ -16,10 +22,19 @@ export function Mystory() {
         </StoryHeader>
         <StoryBox>
           <StoryList>
-            <li>개발을 시작하게 된 이유</li>
-            <li>내가 생각하는 나의 장점 vs 남이 생각하는 나의 장점</li>
-            <li></li>
-            <li></li>
+            {data.map((d) => (
+              <>
+                <li
+                  key={d.id}
+                  onClick={() => {
+                    dispatch({ type: d.id });
+                  }}
+                >
+                  {d.list}
+                  <ToggleIcon color='rgba(0,0,0,0.6)' size='12' />
+                </li>
+              </>
+            ))}
           </StoryList>
         </StoryBox>
       </MainStory>
@@ -64,9 +79,15 @@ const StoryList = styled.ul`
   padding: 0;
 
   & > * {
+    display: flex;
+    align-items: center;
     margin-bottom: 30px;
     padding-left: 10px;
     border-left: 5px solid #eee;
     font-size: 1.2rem;
   }
+`;
+
+const ToggleIcon = styled(CaretDownFill)`
+  margin-left: 5px;
 `;

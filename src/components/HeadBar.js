@@ -38,7 +38,7 @@ export const HeadBar = () => {
               onClick={() => {
                 removeUnscroll();
               }}
-            ></C.Unscroll>
+            />
           </>
         ) : null}
 

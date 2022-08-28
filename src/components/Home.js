@@ -8,7 +8,7 @@ import { UserContext } from '../store/HeadBarContext';
 
 export default function Home() {
   const value = useContext(UserContext);
-  const { menubar, open } = value;
+  const { menubar } = value;
 
   return (
     <div style={{ marginRight: menubar ? '15px' : null }}>

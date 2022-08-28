@@ -1,6 +1,9 @@
-export const init = {};
-export const reducer = (state, action) => {
+export const initStory = {};
+export const storyReducer = (state, action) => {
   switch (action.type) {
+    case 1:
+      return {};
+      break;
     default:
       return;
       break;
