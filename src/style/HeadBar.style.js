@@ -10,7 +10,7 @@ export const Container = styled.div`
   right: 0;
   background-color: ${palette.bgColor};
   border-bottom: 1px solid #eee;
-  padding: 0 112px;
+  padding: 0 70px;
   z-index: 9999;
 `;
 
