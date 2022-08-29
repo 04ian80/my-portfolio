@@ -1,15 +1,21 @@
-import React, { useReducer, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { HeadBar } from './HeadBar';
 import { UserContext } from '../store/HeadBarContext';
 import { CaretDownFill, CaretUpFill } from 'react-bootstrap-icons';
 import { StoryData as data } from '../data/StoryData';
+import { motion } from 'framer-motion';
 
 export function Mystory() {
   const value = useContext(UserContext);
   const { menubar } = value;
-  const [state, dispatch] = useReducer(reducer, initArg);
+  const [toggle, setToggle] = useState({
+    id: data.id,
+    open: false,
+  });
+  console.log(toggle.id);
+  const { id, open } = toggle;
 
   return (
     <StoryContainer style={{ marginRight: menubar ? '23.5px' : null }}>
@@ -23,17 +29,27 @@ export function Mystory() {
         <StoryBox>
           <StoryList>
             {data.map((d) => (
-              <>
-                <li
-                  key={d.id}
+              <StoryEachList key={d.id}>
+                <StoryToggle
                   onClick={() => {
-                    dispatch({ type: d.id });
+                    setToggle({ id: d.id, open: !open });
                   }}
                 >
                   {d.list}
                   <ToggleIcon color='rgba(0,0,0,0.6)' size='12' />
-                </li>
-              </>
+                </StoryToggle>
+                <StoryBodyWrapper
+                  id={d.id}
+                  style={{
+                    height: id === d.id && open === false ? 'auto' : 0,
+                  }}
+                  animate={{
+                    height: id === d.id && open === false ? 'auto' : 0,
+                  }}
+                >
+                  <StoryBody>{d.story}</StoryBody>
+                </StoryBodyWrapper>
+              </StoryEachList>
             ))}
           </StoryList>
         </StoryBox>
@@ -77,17 +93,33 @@ const StoryList = styled.ul`
   flex-direction: column;
   list-style: none;
   padding: 0;
+`;
 
-  & > * {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    padding-left: 10px;
-    border-left: 5px solid #eee;
-    font-size: 1.2rem;
-  }
+const StoryEachList = styled.li`
+  display: inline-block;
+  margin-bottom: 50px;
 `;
 
 const ToggleIcon = styled(CaretDownFill)`
   margin-left: 5px;
+`;
+
+const StoryToggle = styled.div`
+  display: inline-block;
+  /* align-items: center; */
+  width: auto;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  border-left: 5px solid #eee;
+  font-size: 1.2rem;
+`;
+
+const StoryBodyWrapper = styled(motion.div)`
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+`;
+
+const StoryBody = styled.div`
+  padding-left: 16px;
 `;
