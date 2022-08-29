@@ -26,7 +26,7 @@ export const SVG = (props) => {
     <motion.svg
       width={props.size ? props.size : '34px'}
       height={props.size ? props.size : '34px'}
-      role='img'
+      role='image'
       viewBox='0 0 24 24'
       fill={props.color}
       animate={{ opacity: ['0', '1'] }}

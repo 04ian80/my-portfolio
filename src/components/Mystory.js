@@ -12,8 +12,6 @@ export function Mystory() {
     if (toggle === idx) {
       return setToggle('0');
     }
-    console.log(`toggle: ${toggle}`);
-    console.log(`idx: ${idx}`);
     setToggle(idx);
   };
 

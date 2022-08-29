@@ -1,14 +1,15 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { projectData as data } from '../data/ProjectData';
 import { categoryReducer, initCategory } from '../store/ProjectReducer';
 import { motion } from 'framer-motion';
-import { device } from '../style/Variables';
 import { Title } from './Title';
+import { SVG } from '../icon/SVG';
 
 export function Project() {
   const [state, dispatch] = useReducer(categoryReducer, initCategory);
+  const [hoverProject, setHoverProject] = useState(false);
 
   return (
     <ProjectContainer id='project' aria-label='프로젝트 페이지'>
@@ -69,6 +70,9 @@ export function Project() {
                 key={d.id}
                 style={{ opacity: d.name === '준비중...' && 0.6 }}
                 whileHover={{ scale: d.name !== '준비중...' ? 1.1 : 1 }}
+                onMouseEnter={() => {
+                  setHoverProject(false);
+                }}
               >
                 <ProjectImgBox>
                   <ProjectImg
@@ -95,6 +99,14 @@ export function Project() {
               </EachProject>
             )
         )}
+        <a
+          href='https://velog.io/@a_in'
+          rel='noopener noreferrer'
+          target='_blank'
+          aria-label='나의 벨로그'
+        >
+          <SVG name='velog' color='#20C997' />
+        </a>
       </EachProjectContainer>
     </ProjectContainer>
   );
