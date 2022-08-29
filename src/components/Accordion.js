@@ -29,23 +29,21 @@ export const Accordion = ({ d, idx, onToggle, active }) => {
 
 const StoryEachList = styled.li`
   display: inline-block;
-  margin-bottom: 50px;
   color: ${palette.fontColor};
-  /* color: #000; */
-`;
-
-const ToggleIcon = styled(motion(CaretDownFill))`
-  margin-left: 5px;
+  margin: 10px 0;
+  letter-spacing: -0.3px;
 `;
 
 const StoryToggle = styled(motion.div)`
   display: inline-block;
-  /* align-items: center; */
   width: auto;
-  margin-bottom: 30px;
   padding-left: 10px;
   border-left: 5px solid #eee;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+`;
+
+const ToggleIcon = styled(motion(CaretDownFill))`
+  margin-left: 5px;
 `;
 
 const StoryBodyWrapper = styled(motion.div)`
@@ -55,4 +53,7 @@ const StoryBodyWrapper = styled(motion.div)`
 
 const StoryBody = styled.div`
   padding-left: 16px;
+  margin: 10px 0;
+  word-break: keep-all;
+  white-space: pre-wrap;
 `;
