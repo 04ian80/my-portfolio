@@ -1,15 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { HeadBar } from './HeadBar';
-import { UserContext } from '../store/HeadBarContext';
 import { StoryData as data } from '../data/StoryData';
 import { Accordion } from './Accordion';
 
 export function Mystory() {
-  const value = useContext(UserContext);
-  const { menubar } = value;
-
   const [toggle, setToggle] = useState('0');
 
   const handleToggle = (idx) => {
@@ -22,7 +18,7 @@ export function Mystory() {
   };
 
   return (
-    <StoryContainer style={{ marginRight: menubar ? '23.5px' : null }}>
+    <StoryContainer>
       <HeadBar />
       <MainStory>
         <StoryHeader>
@@ -54,6 +50,7 @@ const StoryContainer = styled.div`
 
 const MainStory = styled.section`
   padding: 100px 64px;
+  margin: 0 auto;
 `;
 
 const StoryHeader = styled.div`
