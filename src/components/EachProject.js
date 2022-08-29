@@ -1,48 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { motion } from 'framer-motion';
 import { SVG } from '../icon/SVG';
 
+const COMINGSOON = '준비중...';
+
 export function EachProject({ d }) {
-  // const [hoverProject, setHoverProject] = useState(false);
+  const [hoverProject, setHoverProject] = useState(false);
+  const { name, img, imgSize, category, type, description, link } = d;
 
   return (
     <EachProjectContainer
-      style={{ opacity: d.name === '준비중...' && 0.6 }}
-      whileHover={{ scale: d.name !== '준비중...' ? 1.1 : 1 }}
+      style={{ opacity: name === COMINGSOON && 0.6 }}
+      whileHover={{ scale: name !== COMINGSOON ? 1.1 : 1 }}
       onMouseEnter={() => {
-        // setHoverProject(false);
+        name !== COMINGSOON && setHoverProject(true);
+      }}
+      onMouseLeave={() => {
+        name !== COMINGSOON && setHoverProject(false);
       }}
     >
-      <a
-        href='https://velog.io/@a_in'
-        rel='noopener noreferrer'
-        target='_blank'
-        aria-label='나의 벨로그'
-      >
-        <SVG name='velog' color='#20C997' />
-      </a>
+      {hoverProject && name !== COMINGSOON ? (
+        <Back>
+          <EachProjectLinkContainer>
+            <EachProjectLink
+              href={link.velog}
+              rel='noopener noreferrer'
+              target='_blank'
+              aria-label='나의 벨로그'
+            >
+              <SVG animate={false} name='velog' color={palette.velogColor} />
+            </EachProjectLink>
+            <EachProjectLink
+              href={link.github}
+              rel='noopener noreferrer'
+              target='_blank'
+              aria-label='나의 벨로그'
+            >
+              <SVG animate={false} name='github' color={palette.githubColor} />
+            </EachProjectLink>
+          </EachProjectLinkContainer>
+        </Back>
+      ) : null}
       <ProjectImgBox>
         <ProjectImg
-          src={d.img}
+          src={img}
           alt='D-day 계산 앱'
-          width={d.imgSize.width}
-          height={d.imgSize.height}
+          width={imgSize.width}
+          height={imgSize.height}
         />
       </ProjectImgBox>
       <ProjectDesc>
         <ProjectCategory>
-          <span>{d.category}</span>
+          <span>{category}</span>
         </ProjectCategory>
         <ProjectName>
           <span>
-            {d.name}
-            <span>{d.type}</span>
+            {name}
+            <span>{type}</span>
           </span>
         </ProjectName>
         <Projectintro>
-          <span>{d.description}</span>
+          <span>{description}</span>
         </Projectintro>
       </ProjectDesc>
     </EachProjectContainer>
@@ -60,6 +80,28 @@ const EachProjectContainer = styled(motion.div)`
   flex-wrap: wrap;
   overflow: hidden;
 `;
+
+const Back = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+`;
+
+const EachProjectLinkContainer = styled.div`
+  position: absolute;
+  top: 150px;
+  left: 70px;
+
+  & > *:not(:last-child) {
+    margin-right: 40px;
+  }
+`;
+
+const EachProjectLink = styled.a``;
 
 const ProjectImgBox = styled.div`
   display: flex;

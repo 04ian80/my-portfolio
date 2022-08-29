@@ -13,6 +13,10 @@ export const projectData = [
       width: 260,
       height: 300,
     },
+    link: {
+      velog: 'https://velog.io/@a_in/React-D-day-Calculator',
+      github: 'https://github.com/04ian80/react-study-projects',
+    },
   },
   {
     id: 2,
@@ -25,6 +29,10 @@ export const projectData = [
       width: 240,
       height: 370,
     },
+    link: {
+      velog: 'https://velog.io/@a_in/React-router-Music-App',
+      github: 'https://github.com/04ian80/react-study-projects',
+    },
   },
   {
     id: 3,
@@ -35,6 +43,10 @@ export const projectData = [
     imgSize: {
       width: 240,
       height: 370,
+    },
+    link: {
+      velog: null,
+      github: null,
     },
   },
 ];

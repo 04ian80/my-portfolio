@@ -25,6 +25,7 @@ export function Skills() {
                 >
                   <SkillIcon>
                     <SVG
+                      animate={true}
                       name={d.svg.name}
                       color={d.svg.color}
                       size='60px'
@@ -54,6 +55,7 @@ export function Skills() {
                 >
                   <SkillIcon>
                     <SVG
+                      animate={true}
                       name={d.svg.name}
                       color={d.svg.color}
                       size='60px'
@@ -82,7 +84,12 @@ export function Skills() {
                 aria-label={d.skillName}
               >
                 <SkillIcon>
-                  <SVG name={d.svg.name} color={d.svg.color} size='60px'></SVG>
+                  <SVG
+                    animate={true}
+                    name={d.svg.name}
+                    color={d.svg.color}
+                    size='60px'
+                  ></SVG>
                   <span>{d.skillName}</span>
                 </SkillIcon>
                 <SkillDescContainer animate={{ y: ['10px', '0px'] }}>

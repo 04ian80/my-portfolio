@@ -38,7 +38,7 @@ export function Menubar() {
             }}
             aria-label='나의 깃허브'
           >
-            <SVG name='github' color={iconColor.githubColor} />
+            <SVG animate={false} name='github' color={iconColor.githubColor} />
           </a>
           <a
             href='https://velog.io/@a_in'
@@ -52,7 +52,7 @@ export function Menubar() {
             }}
             aria-label='나의 벨로그'
           >
-            <SVG name='velog' color={iconColor.velogColor} />
+            <SVG animate={false} name='velog' color={iconColor.velogColor} />
           </a>
           <a
             href='mailto:artnouveau0804@gmail.com'
@@ -66,7 +66,7 @@ export function Menubar() {
             }}
             aria-label='나의 지메일'
           >
-            <SVG name='gmail' color={iconColor.gmailColor} />
+            <SVG animate={false} name='gmail' color={iconColor.gmailColor} />
           </a>
         </ContactBox>
         <Menu

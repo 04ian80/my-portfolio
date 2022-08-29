@@ -31,7 +31,12 @@ export function Skills() {
                 style={{ cursor: 'pointer' }}
                 whileHover={{ scale: 1.1 }}
               >
-                <SVG name={d.svg.name} color={d.svg.color} size='35px'></SVG>
+                <SVG
+                  animate={true}
+                  name={d.svg.name}
+                  color={d.svg.color}
+                  size='35px'
+                ></SVG>
               </motion.div>
             ))}
           </SkillList>
@@ -45,6 +50,7 @@ export function Skills() {
                 >
                   <SkillIcon>
                     <SVG
+                      animate={true}
                       name={d.svg.name}
                       color={d.svg.color}
                       size='35px'

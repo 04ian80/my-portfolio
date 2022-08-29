@@ -29,7 +29,7 @@ export const SVG = (props) => {
       role='image'
       viewBox='0 0 24 24'
       fill={props.color}
-      animate={{ opacity: ['0', '1'] }}
+      animate={{ opacity: props.animate ? ['0', '1'] : null }}
     >
       <title>{props.name}</title>
       <path d={svg[props.name]} />

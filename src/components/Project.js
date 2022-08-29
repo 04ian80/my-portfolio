@@ -1,11 +1,9 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { projectData as data } from '../data/ProjectData';
 import { categoryReducer, initCategory } from '../store/ProjectReducer';
-import { motion } from 'framer-motion';
 import { Title } from './Title';
-import { SVG } from '../icon/SVG';
 import { EachProject } from './EachProject';
 
 export function Project() {

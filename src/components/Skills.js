@@ -21,7 +21,12 @@ export function Skills() {
             aria-label={d.skillName}
           >
             <SkillIcon>
-              <SVG name={d.svg.name} color={d.svg.color} size='40px'></SVG>
+              <SVG
+                animate={true}
+                name={d.svg.name}
+                color={d.svg.color}
+                size='40px'
+              ></SVG>
               <span>{d.skillName}</span>
             </SkillIcon>
             <SkillDescContainer animate={{ y: ['10px', '0px'] }} role='tab'>
