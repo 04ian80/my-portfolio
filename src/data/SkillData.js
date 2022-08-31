@@ -39,13 +39,9 @@ export const skillData = [
       <>
         <li>Grid를 이용한 화면 레이아웃</li>
         <li>flexbox를 이용한 요소의 유연한 정렬</li>
-        <li>Pseudo Selector</li>
+        <li>Pseudo Selector를 이용한 애니매이션</li>
         <li>ellipsis, 스크롤 방지 등 css 속성 적극 활용</li>
-        <li>
-          <SassLink to='/#sass' smooth={true}>
-            <span>Sass</span>로 더욱 다이나믹한 스타일링
-          </SassLink>
-        </li>
+        <li>Sass로 더욱 다이나믹한 스타일링</li>
       </>
     ),
   },
@@ -104,6 +100,7 @@ export const skillData = [
     description: (
       <>
         <li>Scss 문법 지향</li>
+        <li>mixin & includes 사용 경혐</li>
       </>
     ),
   },
