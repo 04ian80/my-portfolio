@@ -51,7 +51,7 @@ export function Introduce() {
 
           {isHover ? (
             <I.SeeMore>
-              <span>자세히</span>
+              <span>스토리</span>
             </I.SeeMore>
           ) : null}
         </I.ToMystory>
