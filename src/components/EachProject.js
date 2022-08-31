@@ -88,7 +88,7 @@ const Back = styled.div`
   bottom: 0;
   left: 0;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #ffffff90;
 `;
 
 const EachProjectLinkContainer = styled.div`
