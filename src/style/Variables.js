@@ -14,6 +14,7 @@ export const defaultRadius = '10px';
 export const githubColor = '#181717';
 export const velogColor = '#20C997';
 export const gmailColor = '#EA4335';
+export const telColor = '#73DC3A';
 
 const size = {
   xSmall: '300px',

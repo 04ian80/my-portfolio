@@ -5,6 +5,7 @@ export const initIconColor = {
   githubColor: palette.subFontColor,
   velogColor: palette.subFontColor,
   gmailColor: palette.subFontColor,
+  telColor: palette.subFontColor,
 };
 
 export const iconColorReducer = (state, action) => {
@@ -27,11 +28,15 @@ export const iconColorReducer = (state, action) => {
         gmailColor: palette.gmailColor,
       };
       break;
+    case 'TEL':
+      return {
+        ...state,
+        telColor: palette.telColor,
+      };
+      break;
     case 'DEFAULT':
       return {
-        githubColor: palette.subFontColor,
-        velogColor: palette.subFontColor,
-        gmailColor: palette.subFontColor,
+        ...initIconColor,
       };
       break;
     default:

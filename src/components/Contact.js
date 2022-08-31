@@ -1,6 +1,8 @@
 import React, { useReducer } from 'react';
 import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
 import { SVG } from '../icon/SVG';
+import { Telephone } from 'react-bootstrap-icons';
+import * as palette from '../style/Variables';
 import styled from 'styled-components';
 
 export function Contact() {
@@ -50,6 +52,20 @@ export function Contact() {
       >
         <SVG animate={false} name='gmail' color={iconColor.gmailColor} />
       </a>
+      <a
+        href='tel:010-9677-6912'
+        rel='noopener noreferrer'
+        target='_blank'
+        onMouseEnter={() => {
+          setIconColor({ type: 'TEL' });
+        }}
+        onMouseLeave={() => {
+          setIconColor({ type: 'DEFAULT' });
+        }}
+        aria-label='나의 지메일'
+      >
+        <Telephone width='34px' height='34px' color={iconColor.telColor} />
+      </a>
     </ContactBox>
   );
 }
@@ -61,5 +77,10 @@ const ContactBox = styled.div`
 
   & > *:not(:last-child) {
     padding-right: 15px;
+  }
+
+  & > * {
+    text-decoration: none;
+    color: ${palette.subFontColor};
   }
 `;
