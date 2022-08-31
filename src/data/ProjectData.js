@@ -15,7 +15,7 @@ export const projectData = [
     },
     link: {
       velog: 'https://velog.io/@a_in/React-D-day-Calculator',
-      github: 'https://github.com/04ian80/react-study-projects',
+      github: 'https://github.com/04ian80/d-day-app',
     },
   },
   {
