@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { HeadBar } from './HeadBar';
 import { StoryData as data } from '../data/StoryData';
-import { Accordion } from './Accordion';
+import { StoryAccordion } from './StoryAccordion';
 
 export function Mystory() {
   const [toggle, setToggle] = useState('0');
@@ -27,7 +27,7 @@ export function Mystory() {
         <StoryBox>
           <StoryList>
             {data.map((d, idx) => (
-              <Accordion
+              <StoryAccordion
                 key={idx}
                 d={d}
                 onToggle={() => handleToggle(idx)}

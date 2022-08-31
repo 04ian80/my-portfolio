@@ -4,6 +4,7 @@ import { HeadBar } from './HeadBar';
 import { TopButton } from './TopButton';
 import { Skills } from './Skills';
 import { Project } from './Project';
+import { Footer } from './Footer';
 import { UserContext } from '../store/HeadBarContext';
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Introduce />
       <Skills />
       <Project />
+      <Footer />
     </div>
   );
 }

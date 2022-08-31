@@ -4,12 +4,18 @@ import { CaretDownFill } from 'react-bootstrap-icons';
 import { motion } from 'framer-motion';
 import * as palette from '../style/Variables';
 
-export const Accordion = ({ d, idx, onToggle, active }) => {
+export const StoryAccordion = ({ d, onToggle, active }) => {
   const { list, story } = d;
 
   return (
     <StoryEachList>
-      <StoryToggle onClick={onToggle} whileHover={{ color: '#000' }}>
+      <StoryToggle
+        onClick={onToggle}
+        whileHover={{
+          fontWeight: 600,
+          borderLeft: '5px solid rgba(0,0,0,0.5)',
+        }}
+      >
         {list}
         <ToggleIcon
           color='rgba(0,0,0,0.6)'
