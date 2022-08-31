@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { motion } from 'framer-motion';
 import { SVG } from '../icon/SVG';
+import { Link45deg } from 'react-bootstrap-icons';
 
 const COMINGSOON = '준비중...';
 
@@ -31,6 +32,7 @@ export function EachProject({ d }) {
               aria-label='나의 벨로그'
             >
               <SVG animate={false} name='velog' color={palette.velogColor} />
+              <span>velog</span>
             </EachProjectLink>
             <EachProjectLink
               href={link.github}
@@ -39,6 +41,16 @@ export function EachProject({ d }) {
               aria-label='나의 벨로그'
             >
               <SVG animate={false} name='github' color={palette.githubColor} />
+              <span>GitHub</span>
+            </EachProjectLink>
+            <EachProjectLink
+              href={link.deploy}
+              rel='noopener noreferrer'
+              target='_blank'
+              aria-label='프로젝트 보기'
+            >
+              <Link45deg width='34px' height='34px' />
+              <span>Link</span>
             </EachProjectLink>
           </EachProjectLinkContainer>
         </Back>
@@ -93,15 +105,37 @@ const Back = styled.div`
 
 const EachProjectLinkContainer = styled.div`
   position: absolute;
+  display: flex;
+  justify-content: space-between;
   top: 150px;
-  left: 70px;
+  left: 20px;
+  margin: 0 auto;
+  text-decoration: none;
 
   & > *:not(:last-child) {
     margin-right: 40px;
   }
 `;
 
-const EachProjectLink = styled.a``;
+const EachProjectLink = styled.a`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+
+  span {
+    border-radius: ${palette.defaultRadius};
+    background-color: ${palette.bgColor};
+    margin-top: 3px;
+    padding: 0px 3px 2px;
+    font-size: 0.9rem;
+  }
+
+  :hover {
+    color: lightblue;
+  }
+`;
 
 const ProjectImgBox = styled.div`
   display: flex;
