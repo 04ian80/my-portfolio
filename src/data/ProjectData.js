@@ -5,18 +5,17 @@ import dday from '../components/image/dday.png';
 export const projectData = [
   {
     id: 1,
-    category: '미니 프로젝트',
-    name: 'D-day 계산 앱',
-    description: '특별한 날의 D-day를 계산하고, 등록하는 앱',
-    img: dday,
+    category: '사이드 프로젝트',
+    name: '준비중...',
+    description: '아이디어가 샘솟는 중...',
+    img: comingsoon,
     imgSize: {
-      width: 260,
-      height: 300,
+      width: 240,
+      height: 370,
     },
     link: {
-      velog: 'https://velog.io/@a_in/React-D-day-Calculator',
-      github: 'https://github.com/04ian80/d-day-app',
-      deploy: 'https://04ian80.github.io/',
+      velog: null,
+      github: null,
     },
   },
   {
@@ -36,19 +35,21 @@ export const projectData = [
       deploy: 'https://04ian80.github.io/music-app-deploy/',
     },
   },
+
   {
     id: 3,
-    category: '사이드 프로젝트',
-    name: '준비중...',
-    description: '아이디어가 샘솟는 중...',
-    img: comingsoon,
+    category: '미니 프로젝트',
+    name: 'D-day 계산 앱',
+    description: '특별한 날의 D-day를 계산하고, 등록하는 앱',
+    img: dday,
     imgSize: {
-      width: 240,
-      height: 370,
+      width: 260,
+      height: 300,
     },
     link: {
-      velog: null,
-      github: null,
+      velog: 'https://velog.io/@a_in/React-D-day-Calculator',
+      github: 'https://github.com/04ian80/d-day-app',
+      deploy: 'https://04ian80.github.io/',
     },
   },
 ];
