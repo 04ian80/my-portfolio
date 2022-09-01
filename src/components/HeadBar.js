@@ -22,7 +22,7 @@ export const HeadBar = () => {
   return (
     <C.Container>
       <C.Nav animate={{ opacity: ['0', '1'] }}>
-        <C.LogoContainer to='/' role='button' aria-label='포트폴리오 로고'>
+        <C.LogoContainer to='/' role='banner' aria-label='포트폴리오 로고'>
           <LOGO />
         </C.LogoContainer>
 

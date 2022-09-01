@@ -4,6 +4,7 @@ import * as palette from '../style/Variables';
 import { HeadBar } from './HeadBar';
 import { StoryData as data } from '../data/StoryData';
 import { StoryAccordion } from './StoryAccordion';
+import { Footer } from './Footer';
 
 export function Mystory() {
   const [toggle, setToggle] = useState('0');
@@ -16,39 +17,48 @@ export function Mystory() {
   };
 
   return (
-    <StoryContainer>
-      <HeadBar />
-      <MainStory>
-        <StoryHeader>
-          <Title>
-            <h2>스토리</h2>
-          </Title>
-        </StoryHeader>
-        <StoryBox>
-          <StoryList>
-            {data.map((d, idx) => (
-              <StoryAccordion
-                key={idx}
-                d={d}
-                onToggle={() => handleToggle(idx)}
-                active={toggle === idx}
-              />
-            ))}
-          </StoryList>
-        </StoryBox>
-      </MainStory>
-    </StoryContainer>
+    <Container>
+      <StoryContainer>
+        <HeadBar />
+        <MainStory>
+          <StoryHeader>
+            <Title>
+              <h2>스토리</h2>
+            </Title>
+          </StoryHeader>
+          <StoryBox>
+            <StoryList>
+              {data.map((d, idx) => (
+                <StoryAccordion
+                  key={idx}
+                  d={d}
+                  onToggle={() => handleToggle(idx)}
+                  active={toggle === idx}
+                />
+              ))}
+            </StoryList>
+          </StoryBox>
+        </MainStory>
+      </StoryContainer>
+      <Footer />
+    </Container>
   );
 }
+
+const Container = styled.div`
+  width: 100%;
+`;
 
 const StoryContainer = styled.div`
   margin: 0 auto;
   max-width: 1024px;
+  height: 85vh;
 `;
 
 const MainStory = styled.section`
   padding: 100px 64px;
   margin: 0 auto;
+  /* min-height: 100vh; */
 `;
 
 const StoryHeader = styled.div`
