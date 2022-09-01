@@ -138,6 +138,7 @@ export const TypeItBox = styled.div`
 
   @media ${viewsize.xSmall} {
     font-size: 1rem;
+    height: 20px;
     width: 19rem;
   }
 
