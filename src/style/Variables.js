@@ -26,7 +26,7 @@ const size = {
   large: '1200px',
 };
 
-export const device = {
+export const viewsize = {
   xSmall: `(min-width: ${size.xSmall}) and (max-width: ${size.xSmallMax})`,
   small: `(min-width: ${size.small}) and (max-width: ${size.smallMax})`,
   medium: `(min-width: ${size.medium}) and (max-width: ${size.mediumMax})`,

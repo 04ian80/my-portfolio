@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
 import { motion } from 'framer-motion';
 import { SVG } from '../icon/SVG';
 import { Link45deg } from 'react-bootstrap-icons';
+import Media from 'react-media';
+import { EachProjectMobile } from './EachProjectMobile';
 
 const COMINGSOON = '준비중...';
 
@@ -12,72 +14,101 @@ export function EachProject({ d }) {
   const { name, img, imgSize, category, type, description, link } = d;
 
   return (
-    <EachProjectContainer
-      style={{ opacity: name === COMINGSOON && 0.6 }}
-      whileHover={{ scale: name !== COMINGSOON ? 1.1 : 1 }}
-      onMouseEnter={() => {
-        name !== COMINGSOON && setHoverProject(true);
-      }}
-      onMouseLeave={() => {
-        name !== COMINGSOON && setHoverProject(false);
-      }}
-    >
-      {hoverProject && name !== COMINGSOON ? (
-        <Back>
-          <EachProjectLinkContainer>
-            <EachProjectLink
-              href={link.velog}
-              rel='noopener noreferrer'
-              target='_blank'
-              aria-label='나의 벨로그'
-            >
-              <SVG animate={false} name='velog' color={palette.velogColor} />
-              <span>velog</span>
-            </EachProjectLink>
-            <EachProjectLink
-              href={link.github}
-              rel='noopener noreferrer'
-              target='_blank'
-              aria-label='나의 벨로그'
-            >
-              <SVG animate={false} name='github' color={palette.githubColor} />
-              <span>GitHub</span>
-            </EachProjectLink>
-            <EachProjectLink
-              href={link.deploy}
-              rel='noopener noreferrer'
-              target='_blank'
-              aria-label='프로젝트 보기'
-            >
-              <Link45deg width='34px' height='34px' />
-              <span>Link</span>
-            </EachProjectLink>
-          </EachProjectLinkContainer>
-        </Back>
-      ) : null}
-      <ProjectImgBox>
-        <ProjectImg
-          src={img}
-          alt='D-day 계산 앱'
-          width={imgSize.width}
-          height={imgSize.height}
-        />
-      </ProjectImgBox>
-      <ProjectDesc>
-        <ProjectCategory>
-          <span>{category}</span>
-        </ProjectCategory>
-        <ProjectName>
-          <span>
-            {name}
-            <span>{type}</span>
-          </span>
-        </ProjectName>
-        <Projectintro>
-          <span>{description}</span>
-        </Projectintro>
-      </ProjectDesc>
-    </EachProjectContainer>
+    <>
+      <div>
+        <Media
+          queries={{
+            small: '(max-width: 599px)',
+            medium: '(min-width: 600px)',
+          }}
+        >
+          {(matches) => (
+            <Fragment>
+              {matches.small && <EachProjectMobile d={d} />}
+              {matches.medium && (
+                <EachProjectContainer
+                  style={{ opacity: name === COMINGSOON && 0.6 }}
+                  whileHover={{ scale: name !== COMINGSOON ? 1.1 : 1 }}
+                  onMouseEnter={() => {
+                    name !== COMINGSOON && setHoverProject(true);
+                  }}
+                  onMouseLeave={() => {
+                    name !== COMINGSOON && setHoverProject(false);
+                  }}
+                  onClick={() => {
+                    name !== COMINGSOON && setHoverProject(true);
+                  }}
+                >
+                  {hoverProject && name !== COMINGSOON ? (
+                    <Back>
+                      <EachProjectLinkContainer>
+                        <EachProjectLink
+                          href={link.velog}
+                          rel='noopener noreferrer'
+                          target='_blank'
+                          aria-label='나의 벨로그'
+                        >
+                          <SVG
+                            animate={false}
+                            name='velog'
+                            color={palette.velogColor}
+                          />
+                          <span>velog</span>
+                        </EachProjectLink>
+                        <EachProjectLink
+                          href={link.github}
+                          rel='noopener noreferrer'
+                          target='_blank'
+                          aria-label='나의 벨로그'
+                        >
+                          <SVG
+                            animate={false}
+                            name='github'
+                            color={palette.githubColor}
+                          />
+                          <span>GitHub</span>
+                        </EachProjectLink>
+                        <EachProjectLink
+                          href={link.deploy}
+                          rel='noopener noreferrer'
+                          target='_blank'
+                          aria-label='프로젝트 보기'
+                        >
+                          <Link45deg width='34px' height='34px' />
+                          <span>Link</span>
+                        </EachProjectLink>
+                      </EachProjectLinkContainer>
+                    </Back>
+                  ) : null}
+                  <ProjectImgBox>
+                    <ProjectImg
+                      src={img}
+                      alt='D-day 계산 앱'
+                      width={imgSize.width}
+                      height={imgSize.height}
+                    />
+                  </ProjectImgBox>
+                  <ProjectDesc>
+                    <ProjectCategory>
+                      <span>{category}</span>
+                    </ProjectCategory>
+                    <ProjectName>
+                      <span>
+                        {name}
+                        <span>{type}</span>
+                      </span>
+                    </ProjectName>
+                    <Projectintro>
+                      <span>{description}</span>
+                    </Projectintro>
+                  </ProjectDesc>
+                </EachProjectContainer>
+              )}
+            </Fragment>
+          )}
+        </Media>
+      </div>
+    </>
   );
 }
 

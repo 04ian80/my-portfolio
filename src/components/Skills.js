@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { SVG } from '../icon/SVG';
 import { motion } from 'framer-motion';
-import * as palette from '../style/Variables';
+import { viewsize } from '../style/Variables';
 import { skillData as data } from '../data/SkillData';
 import { Title } from './Title';
 
@@ -52,6 +52,10 @@ const SkillHeader = styled.div`
   align-items: flex-start;
   flex-wrap: wrap;
   padding: 100px 180px 32px;
+
+  @media ${viewsize.xSmall} {
+    padding: 100px 50px 32px;
+  }
 `;
 
 const SkillBox = styled.div`
@@ -77,6 +81,10 @@ const SkillBox = styled.div`
       'st'
       'st';
     gap: 16px;
+  }
+
+  @media ${viewsize.xSmall} {
+    padding-left: 50px;
   }
 `;
 

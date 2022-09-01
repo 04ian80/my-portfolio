@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import * as palette from './Variables';
-import { device } from './Variables';
+import { viewsize } from './Variables';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -87,7 +87,11 @@ export const MainTitle = styled.div`
   color: ${palette.fontColor};
   font-size: 3rem;
 
-  @media ${device.large} {
+  @media ${viewsize.xSmall} {
+    font-size: 2rem;
+  }
+
+  @media ${viewsize.large} {
     font-size: 5rem;
   }
 
@@ -132,20 +136,20 @@ export const TypeItBox = styled.div`
   height: 40px;
   font-weight: 400;
 
-  @media ${device.xSmall} {
+  @media ${viewsize.xSmall} {
     font-size: 1rem;
     width: 19rem;
   }
 
-  @media ${device.small} {
+  @media ${viewsize.small} {
     font-size: 1.4rem;
     width: 25rem;
   }
-  @media ${device.medium} {
+  @media ${viewsize.medium} {
     font-size: 1.8rem;
     width: 32rem;
   }
-  @media ${device.large} {
+  @media ${viewsize.large} {
     font-size: 2rem;
     width: 36rem;
   }

@@ -5,6 +5,7 @@ import { projectData as data } from '../data/ProjectData';
 import { categoryReducer, initCategory } from '../store/ProjectReducer';
 import { Title } from './Title';
 import { EachProject } from './EachProject';
+import { viewsize } from '../style/Variables';
 
 export function Project() {
   const [state, dispatch] = useReducer(categoryReducer, initCategory);
@@ -88,6 +89,10 @@ const ProjectHeader = styled.div`
 
   & > *:not(:last-child) {
     margin: 0 20px 20px 0;
+  }
+
+  @media ${viewsize.xSmall} {
+    padding: 100px 50px 32px;
   }
 `;
 const ProjectCategoryAll = styled.div`
