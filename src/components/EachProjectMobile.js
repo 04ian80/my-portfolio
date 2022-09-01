@@ -74,36 +74,6 @@ export function EachProjectMobile({ d }) {
           </div>
         )}
       </EachProjectContainer>
-
-      <EachProjectLinkContainer>
-        <EachProjectLink
-          href={link.velog}
-          rel='noopener noreferrer'
-          target='_blank'
-          aria-label='나의 벨로그'
-        >
-          <SVG animate={false} name='velog' color={palette.velogColor} />
-          <span>velog</span>
-        </EachProjectLink>
-        <EachProjectLink
-          href={link.github}
-          rel='noopener noreferrer'
-          target='_blank'
-          aria-label='나의 벨로그'
-        >
-          <SVG animate={false} name='github' color={palette.githubColor} />
-          <span>GitHub</span>
-        </EachProjectLink>
-        <EachProjectLink
-          href={link.deploy}
-          rel='noopener noreferrer'
-          target='_blank'
-          aria-label='프로젝트 보기'
-        >
-          <Link45deg width='34px' height='34px' />
-          <span>Link</span>
-        </EachProjectLink>
-      </EachProjectLinkContainer>
     </>
   );
 }
