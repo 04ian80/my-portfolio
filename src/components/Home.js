@@ -8,6 +8,7 @@ import { Footer } from './Footer';
 import { UserContext } from '../store/HeadBarContext';
 
 export default function Home() {
+  document.title = '홈 | 종아인의 포트폴리오';
   const value = useContext(UserContext);
   const { menubar } = value;
 
