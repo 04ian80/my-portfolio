@@ -36,20 +36,20 @@ export const projectData = [
     },
   },
 
-  {
-    id: 3,
-    category: '미니 프로젝트',
-    name: 'D-day 계산 앱',
-    description: '특별한 날의 D-day를 계산하고, 등록하는 앱',
-    img: dday,
-    imgSize: {
-      width: 260,
-      height: 300,
-    },
-    link: {
-      velog: 'https://velog.io/@a_in/React-D-day-Calculator',
-      github: 'https://github.com/04ian80/d-day-app',
-      deploy: 'https://04ian80.github.io/',
-    },
-  },
+  // {
+  //   id: 3,
+  //   category: '미니 프로젝트',
+  //   name: 'D-day 계산 앱',
+  //   description: '특별한 날의 D-day를 계산하고, 등록하는 앱',
+  //   img: dday,
+  //   imgSize: {
+  //     width: 260,
+  //     height: 300,
+  //   },
+  //   link: {
+  //     velog: 'https://velog.io/@a_in/React-D-day-Calculator',
+  //     github: 'https://github.com/04ian80/d-day-app',
+  //     deploy: 'https://04ian80.github.io/d-day',
+  //   },
+  // },
 ];
