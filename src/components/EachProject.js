@@ -7,11 +7,10 @@ import { Link45deg } from 'react-bootstrap-icons';
 import Media from 'react-media';
 import { EachProjectMobile } from './EachProjectMobile';
 
-const COMINGSOON = '준비중...';
-
 export function EachProject({ d }) {
   const [hoverProject, setHoverProject] = useState(false);
   const { name, img, imgSize, category, type, description, link } = d;
+  const COMINGSOON = type === '준비중';
 
   return (
     <>
@@ -27,19 +26,19 @@ export function EachProject({ d }) {
               {matches.small && <EachProjectMobile d={d} />}
               {matches.medium && (
                 <EachProjectContainer
-                  style={{ opacity: name === COMINGSOON && 0.6 }}
-                  whileHover={{ scale: name !== COMINGSOON ? 1.1 : 1 }}
+                  style={{ opacity: COMINGSOON && 0.6 }}
+                  whileHover={{ scale: !COMINGSOON ? 1.1 : 1 }}
                   onMouseEnter={() => {
-                    name !== COMINGSOON && setHoverProject(true);
+                    !COMINGSOON && setHoverProject(true);
                   }}
                   onMouseLeave={() => {
-                    name !== COMINGSOON && setHoverProject(false);
+                    !COMINGSOON && setHoverProject(false);
                   }}
                   onClick={() => {
-                    name !== COMINGSOON && setHoverProject(true);
+                    !COMINGSOON && setHoverProject(true);
                   }}
                 >
-                  {hoverProject && name !== COMINGSOON ? (
+                  {hoverProject && !COMINGSOON ? (
                     <Back>
                       <EachProjectLinkContainer>
                         <EachProjectLink
@@ -171,7 +170,7 @@ const EachProjectLink = styled.a`
 const ProjectImgBox = styled.div`
   display: flex;
   justify-content: center;
-  height: 70%;
+  height: 65%;
 `;
 
 const ProjectImg = styled.img`
@@ -181,7 +180,7 @@ const ProjectImg = styled.img`
 
 const ProjectDesc = styled.div`
   position: relative;
-  height: 30%;
+  height: 35%;
   color: ${palette.fontColor};
   border-top: 2px solid ${palette.brownColor};
   background-color: #fff;
@@ -219,6 +218,7 @@ const ProjectName = styled.div`
     color: ${palette.subFontColor};
     font-size: 12px;
     font-weight: 400;
+    margin-left: 5px;
   }
 `;
 

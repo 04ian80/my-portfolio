@@ -1,13 +1,15 @@
 import musicApp from '../components/image/musicapp.png';
 import comingsoon from '../components/image/comingsoon.png';
-import dday from '../components/image/dday.png';
+// import dday from '../components/image/dday.png';
 
 export const projectData = [
   {
     id: 1,
     category: '사이드 프로젝트',
-    name: '준비중...',
-    description: '아이디어가 샘솟는 중...',
+    name: '소상공간',
+    type: '준비중',
+    description:
+      '소상공인 가게에 사람들이 더 많이 갈 수 있도록 소상공인 가게를 추천, 음악 플레이리스트처럼 맛집을 공유하는 앱 웹.',
     img: comingsoon,
     imgSize: {
       width: 240,
@@ -22,6 +24,7 @@ export const projectData = [
     id: 2,
     category: '미니 프로젝트',
     name: '음악 스트리밍 앱',
+    ready: '완료',
     type: <span>&#40;UI only&#41;</span>,
     description: 'SPA로 구현해본 음악 스트리밍 앱',
     img: musicApp,

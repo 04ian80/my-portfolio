@@ -21,8 +21,8 @@ export const skillData = [
     skillName: 'HTML',
     description: (
       <>
-        <li>웹 접근성을 고려한 WAI-ARIA 사용</li>
-        <li>시멘틱 태그 사용</li>
+        <li>웹 접근성을 고려한 WAI-ARIA에 대한 이해</li>
+        <li>Semantic 태그 지향</li>
       </>
     ),
   },
@@ -35,11 +35,9 @@ export const skillData = [
     skillName: 'CSS',
     description: (
       <>
-        <li>Grid를 이용한 화면 레이아웃</li>
+        <li>grid를 이용한 화면 레이아웃</li>
         <li>flexbox를 이용한 요소의 유연한 정렬</li>
-        <li>Pseudo Selector를 이용한 애니메이션</li>
         <li>ellipsis, 스크롤 방지 등 CSS 속성 적극 활용</li>
-        <li>Sass로 더욱 다이나믹한 스타일링</li>
       </>
     ),
   },

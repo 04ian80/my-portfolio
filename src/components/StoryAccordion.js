@@ -46,6 +46,7 @@ const StoryToggle = styled(motion.div)`
   padding-left: 10px;
   border-left: 5px solid #eee;
   font-size: 1.5rem;
+  cursor: pointer;
 `;
 
 const ToggleIcon = styled(motion(CaretDownFill))`

@@ -53,7 +53,7 @@ const Container = styled.div`
 const StoryContainer = styled.div`
   margin: 0 auto;
   max-width: 1024px;
-  min-height: 85vh;
+  min-height: 100vh;
 `;
 
 const MainStory = styled.section`

@@ -14,12 +14,7 @@ export function Skills() {
       </SkillHeader>
       <SkillBox>
         {data.map((d) => (
-          <SkillEach
-            key={d.id}
-            whileHover={{ scale: 1.1 }}
-            role='tab'
-            aria-label={d.skillName}
-          >
+          <SkillEach key={d.id} role='tab' aria-label={d.skillName}>
             <SkillIcon>
               <SVG
                 animate={true}
@@ -61,10 +56,7 @@ const SkillHeader = styled.div`
 const SkillBox = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    'st th'
-    'st th';
+  /* grid-template-rows: 1fr 1fr 1fr; */
   gap: 16px;
   margin: 30px auto;
   padding-left: 140px;
@@ -72,14 +64,7 @@ const SkillBox = styled.div`
 
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      'st'
-      'st'
-      'st'
-      'st'
-      'st'
-      'st';
+    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
     gap: 16px;
   }
 
