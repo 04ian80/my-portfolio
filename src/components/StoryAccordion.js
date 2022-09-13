@@ -36,7 +36,7 @@ export const StoryAccordion = ({ d, onToggle, active }) => {
 const StoryEachList = styled.li`
   display: inline-block;
   color: ${palette.fontColor};
-  margin: 10px 0;
+  margin: 15px 0;
   letter-spacing: -0.3px;
 `;
 

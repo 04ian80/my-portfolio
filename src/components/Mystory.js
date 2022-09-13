@@ -8,7 +8,7 @@ import { Footer } from './Footer';
 
 export function Mystory() {
   document.title = '스토리 | 종아인의 포트폴리오';
-  const [toggle, setToggle] = useState('0');
+  const [toggle, setToggle] = useState(0);
 
   const handleToggle = (idx) => {
     if (toggle === idx) {

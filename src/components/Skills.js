@@ -81,9 +81,8 @@ const SkillEach = styled(motion.article)`
 const SkillIcon = styled.div`
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   margin: 0 1rem;
-  padding-bottom: 1rem;
 
   span {
     margin-left: 6px;
@@ -99,7 +98,7 @@ const SkillList = styled.ul`
   padding: 0;
 
   & > * {
-    margin-bottom: 5px;
+    margin-bottom: 12px;
     margin-left: 20px;
     padding-left: 10px;
     border-left: 4px solid #eee;
