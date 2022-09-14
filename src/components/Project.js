@@ -79,6 +79,7 @@ const ProjectContainer = styled.div`
   justify-content: center;
   min-height: 100vh;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 `;
 
 const ProjectHeader = styled.div`
@@ -116,7 +117,7 @@ const ProjectCategoryAll = styled.div`
 `;
 
 const EachProjectContainer = styled.div`
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  margin-left: 40px;
   flex-wrap: wrap;
 `;
