@@ -77,7 +77,6 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
   flex-wrap: wrap;
   margin-bottom: 50px;
 `;
@@ -85,7 +84,7 @@ const ProjectContainer = styled.div`
 const ProjectHeader = styled.div`
   display: flex;
   align-items: flex-start;
-  padding: 100px 180px 32px;
+  padding: ${palette.defaultHeader} 180px 32px;
   flex-wrap: wrap;
 
   & > *:not(:last-child) {
@@ -93,7 +92,7 @@ const ProjectHeader = styled.div`
   }
 
   @media ${viewsize.xSmall} {
-    padding: 100px 50px 32px;
+    padding: ${palette.defaultHeader} 50px 32px;
   }
 `;
 const ProjectCategoryAll = styled.div`
@@ -117,7 +116,6 @@ const ProjectCategoryAll = styled.div`
 `;
 
 const EachProjectContainer = styled.div`
-  /* display: flex; */
-  margin-left: 40px;
+  margin: 0 auto;
   flex-wrap: wrap;
 `;

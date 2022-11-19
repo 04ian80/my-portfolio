@@ -60,6 +60,21 @@ export const skillData = [
   {
     id: 4,
     svg: {
+      name: 'TypeScript',
+      color: '#007acc',
+    },
+    skillName: 'TypeScript',
+    description: (
+      <>
+        <li>interface를 사용한 타입지정에 대한 이해</li>
+        <li>정확한 이벤트 객체에 대한 타입 사용</li>
+        <li>Union 타입을 컴포넌트 props에 전달하여 UI 동적으로 변환하기</li>
+      </>
+    ),
+  },
+  {
+    id: 5,
+    svg: {
       name: 'React',
       color: '#61DAFB',
     },
@@ -74,7 +89,36 @@ export const skillData = [
     ),
   },
   {
-    id: 5,
+    id: 6,
+    svg: {
+      name: 'Nextjs',
+      color: '#000000',
+    },
+    skillName: 'Nextjs',
+    description: (
+      <>
+        <li>next/auth를 이용한 소셜로그인 구현</li>
+        <li>다이나믹 meta 컴포넌트 구현</li>
+        <li>동적 url에 대한 이해</li>
+      </>
+    ),
+  },
+  {
+    id: 7,
+    svg: {
+      name: 'tailwindcss',
+      color: '#06B6D4',
+    },
+    skillName: 'tailwindcss',
+    description: (
+      <>
+        <li>@apply 키워드를 사용한 커스텀 className</li>
+        <li>커스텀 screen으로 media-query 사용</li>
+      </>
+    ),
+  },
+  {
+    id: 8,
     svg: {
       name: 'styledComponents',
       color: '#DB7093',
@@ -87,7 +131,7 @@ export const skillData = [
     ),
   },
   {
-    id: 6,
+    id: 9,
     svg: {
       name: 'Sass',
       color: '#CC6699',

@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
-import * as palette from '../style/Variables';
+import * as palette from '../../style/Variables';
 import { motion } from 'framer-motion';
-import { SVG } from '../icon/SVG';
+import { SVG } from '../../icon/SVG';
 import { Link45deg } from 'react-bootstrap-icons';
 import Media from 'react-media';
-import { EachProjectMobile } from './EachProjectMobile';
+import { EachProjectMobile } from '../EachProjectMobile';
 
 export function EachProject({ d }) {
   const [hoverProject, setHoverProject] = useState(false);

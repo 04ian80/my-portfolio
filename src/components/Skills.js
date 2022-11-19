@@ -5,8 +5,9 @@ import { motion } from 'framer-motion';
 import { viewsize } from '../style/Variables';
 import { skillData as data } from '../data/SkillData';
 import { Title } from './Title';
+import * as palette from '../style/Variables';
 
-export function Skills() {
+export const Skills = () => {
   return (
     <SkillContainer id='skill' role='feed' aria-label='기술스택 페이지'>
       <SkillHeader>
@@ -20,7 +21,7 @@ export function Skills() {
                 animate={true}
                 name={d.svg.name}
                 color={d.svg.color}
-                size='40px'
+                size='40'
               ></SVG>
               <span>{d.skillName}</span>
             </SkillIcon>
@@ -32,39 +33,37 @@ export function Skills() {
       </SkillBox>
     </SkillContainer>
   );
-}
+};
 
 const SkillContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 100vh;
   background-color: #fafafa;
+  padding-bottom: 30px;
 `;
 
 const SkillHeader = styled.div`
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 100px 180px 32px;
+  padding: ${palette.defaultHeader} 180px 32px;
 
   @media ${viewsize.xSmall} {
-    padding: 100px 50px 32px;
+    padding: ${palette.defaultHeader} 50px 32px;
   }
 `;
 
 const SkillBox = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr 1fr; */
   gap: 16px;
-  margin: 30px auto;
-  padding-left: 140px;
+  margin: auto;
+  padding-left: 10%;
   flex-wrap: wrap;
 
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
-    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
     gap: 16px;
   }
 

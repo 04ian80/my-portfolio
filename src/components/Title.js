@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
+import { viewsize } from '../style/Variables';
 
 export function Title(props) {
   return (
@@ -19,7 +20,13 @@ const TitleMain = styled.div`
   & > * {
     padding: 0;
     margin: 0;
-    font-size: 2rem;
+    font-size: 34px;
     font-weight: 400;
+  }
+
+  @media ${viewsize.xSmall} {
+    & > * {
+      font-size: 26px;
+    }
   }
 `;

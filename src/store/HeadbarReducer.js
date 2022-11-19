@@ -15,30 +15,25 @@ export const iconColorReducer = (state, action) => {
         ...state,
         githubColor: palette.githubColor,
       };
-      break;
     case 'VELOG':
       return {
         ...state,
         velogColor: palette.velogColor,
       };
-      break;
     case 'GMAIL':
       return {
         ...state,
         gmailColor: palette.gmailColor,
       };
-      break;
     case 'TEL':
       return {
         ...state,
         telColor: palette.telColor,
       };
-      break;
     case 'DEFAULT':
       return {
         ...initIconColor,
       };
-      break;
     default:
       break;
   }

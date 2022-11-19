@@ -1,15 +1,15 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import * as palette from '../style/Variables';
-import { SVG } from '../icon/SVG';
-import { Link45deg, LockFill } from 'react-bootstrap-icons';
+import { Link45deg } from 'react-bootstrap-icons';
 import Media from 'react-media';
+import { viewsize } from '../style/Variables';
+import { Velog } from './svg/Velog';
+import { Github } from './svg/Github';
 
 export function EachProject({ d }) {
-  // const [hoverProject, setHoverProject] = useState(false);
   const { skill, name, img, imgSize, category, type, description, link, main } =
     d;
-  // const COMINGSOON = type === '준비중';
 
   return (
     <Container>
@@ -24,7 +24,7 @@ export function EachProject({ d }) {
               <ImgContainer>
                 <Img
                   src={img}
-                  alt='D-day 계산 앱'
+                  alt='프로젝트 이미지'
                   width={imgSize.width}
                   height={imgSize.height}
                 />
@@ -51,12 +51,7 @@ export function EachProject({ d }) {
                 target='_blank'
                 aria-label='나의 벨로그'
               >
-                <SVG
-                  size='20'
-                  animate={false}
-                  name='velog'
-                  color={palette.velogColor}
-                />
+                <Velog size='24' animate={true} color={palette.velogColor} />
                 <span>velog</span>
               </Link>
             )}
@@ -64,14 +59,9 @@ export function EachProject({ d }) {
               href={link.github}
               rel='noopener noreferrer'
               target='_blank'
-              aria-label='나의 벨로그'
+              aria-label='나의 깃허브'
             >
-              <SVG
-                size='20'
-                animate={false}
-                name='github'
-                color={palette.githubColor}
-              />
+              <Github size='24' animate={true} color={palette.githubColor} />
               <span>GitHub</span>
             </Link>
             {link.deploy !== null && (
@@ -92,7 +82,7 @@ export function EachProject({ d }) {
         </Description>
 
         <Main>
-          <ul>{main}</ul>
+          <ul style={{ fontSize: '12px' }}>{main}</ul>
         </Main>
 
         <Skill>
@@ -107,10 +97,12 @@ export function EachProject({ d }) {
 const Container = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 50px;
-  /* @media (max-width: 600px) {
-    margin-bottom: 50px;
-  } */
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
 `;
 
 const ImgContainer = styled.div`
@@ -119,10 +111,10 @@ const ImgContainer = styled.div`
   align-items: center;
   width: 240px;
   height: 240px;
-  border: 1px solid ${palette.lightGray};
-  /* border-radius: 10px; */
+  border: 2px solid ${palette.lightGray};
   flex-shrink: 0;
   overflow: hidden;
+  margin-left: 5%;
 `;
 
 const Img = styled.img`
@@ -190,7 +182,7 @@ const LinkContainer = styled.div`
   display: flex;
   margin-left: 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     margin-left: 0;
     margin-top: 10px;
   }
@@ -208,8 +200,6 @@ const Link = styled.a`
   span {
     border-radius: ${palette.defaultRadius};
     background-color: ${palette.bgColor};
-    /* margin-top: 3px; */
-    /* margin-left: 3px; */
     padding: 0px 3px 2px;
     font-size: 15px;
   }
@@ -223,14 +213,10 @@ const Main = styled.div`
     font-size: 18px;
     font-weight: 400;
     padding-bottom: 10px;
+    @media ${viewsize.xSmall} {
+      font-size: 14px;
+    }
   }
 `;
 
-const Skill = styled.div`
-  /* & > :first-child {
-    display: block;
-    font-size: 23px;
-    font-weight: 500;
-    margin-bottom: 10px;
-  } */
-`;
+const Skill = styled.div``;

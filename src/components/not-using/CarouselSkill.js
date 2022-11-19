@@ -1,10 +1,10 @@
 import React, { useReducer } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { SVG } from '../icon/SVG';
-import * as palette from '../style/Variables';
-import { skillData as data } from '../data/SkillData';
-import { SkillInit, SkillReducer } from '../store/SkillReducer';
+import { SVG } from '../../icon/SVG';
+import * as palette from '../../style/Variables';
+import { skillData as data } from '../../data/SkillData';
+import { SkillInit, SkillReducer } from '../../store/SkillReducer';
 import { CaretLeft, CaretRight } from 'react-bootstrap-icons';
 
 export function Skills() {

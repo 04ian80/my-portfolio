@@ -1,12 +1,12 @@
 import React, { useReducer, useContext } from 'react';
-import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
-import { SVG } from '../icon/SVG';
+import { iconColorReducer, initIconColor } from '../../store/HeadbarReducer';
+import { SVG } from '../../icon/SVG';
 import { motion } from 'framer-motion';
-import * as palette from '../style/Variables';
-import { UserContext } from '../store/HeadBarContext';
+import * as palette from '../../style/Variables';
+import { UserContext } from '../../store/HeadBarContext';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Contact } from './Contact';
+import { Contact } from '../Contact';
 
 export function Menubar() {
   const [iconColor, setIconColor] = useReducer(iconColorReducer, initIconColor);

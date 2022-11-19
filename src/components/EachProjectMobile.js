@@ -89,10 +89,6 @@ const EachProjectContainer = styled(motion.div)`
   flex-shrink: 0;
   flex-wrap: wrap;
   overflow: hidden;
-
-  /* @media ${viewsize} {
-    margin:
-  } */
 `;
 
 const EachProjectLinkContainer = styled.div`

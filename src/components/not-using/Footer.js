@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Contact } from './Contact';
+import { Contact } from '../Contact';
 
 export function Footer() {
   return (

@@ -1,89 +1,53 @@
 import styled from 'styled-components';
 import * as palette from './Variables';
 import { viewsize } from './Variables';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+`;
 
 export const MainHeader = styled.div`
   @import 'https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400';
 
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  min-height: 100vh;
+  /* align-items: center; */
+  align-content: flex-start;
+  /* min-height: 100vh; */
   flex-wrap: wrap;
   font-weight: 300;
   flex-shrink: 0;
+  margin: ${palette.defaultHeader} 10% 10px;
+  border-radius: 10px;
+  padding: 10px;
 `;
 
 export const ProfileImg = styled.img`
-  border-radius: 10px;
+  border-radius: 20px;
   object-fit: cover;
   background-color: rgba(0, 0, 0, 0.2);
 `;
 
 export const ImgBox = styled.div`
   position: relative;
-  width: 300px;
-  height: 400px;
-  margin-top: 7rem;
-`;
-
-export const SeeMore = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 15px;
-  font-weight: 500;
-  transform: translateY(1px);
-`;
-
-export const ToMystory = styled(motion(Link))`
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  color: ${palette.subFontColor};
-  background-color: white;
-  font-size: 20px;
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-
-  & > span {
-    transform: translateY(-2px);
-  }
-`;
-
-export const BackOfToMystory = styled(motion.div)`
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: ${palette.bgColor};
+  width: 160px;
+  height: 180px;
+  margin: 10px 100px;
 `;
 
 export const Introduce = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
 `;
 
 export const MainTitle = styled.div`
   align-items: center;
   min-width: 5rem;
   display: block;
-  padding: 1rem;
   color: ${palette.fontColor};
   font-size: 3rem;
 
@@ -92,7 +56,7 @@ export const MainTitle = styled.div`
   }
 
   @media ${viewsize.large} {
-    font-size: 5rem;
+    /* font-size: 5rem; */
   }
 
   & > span:nth-child(4) {
@@ -130,7 +94,7 @@ export const MainTitle = styled.div`
 `;
 
 export const TypeItBox = styled.div`
-  padding: 0.5rem 1rem;
+  padding: 0 10px;
   border-bottom: 2px solid ${palette.pointColor};
   white-space: normal;
   height: 40px;
@@ -163,4 +127,27 @@ export const screenReadersOnly = styled.div`
   margin: -1px;
   overflow: hidden;
   border: 0;
+`;
+
+export const AboutMe = styled.div`
+  border-right: 1px solid gray;
+  border-left: 1px solid gray;
+  padding: 10px;
+`;
+
+export const AboutMeList = styled.ul`
+  font-size: 20px;
+  font-weight: 600;
+  list-style: none;
+  /* padding: 5%; */
+
+  @media ${viewsize.xSmall} {
+    font-size: 18px;
+  }
+
+  & > * {
+    border-left: 3px solid ${palette.greenColor};
+    margin: 0 10px 15px;
+    padding-left: 8px;
+  }
 `;

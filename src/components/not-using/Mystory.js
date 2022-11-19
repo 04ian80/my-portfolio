@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import * as palette from '../style/Variables';
-import { HeadBar } from './HeadBar';
-import { StoryData as data } from '../data/StoryData';
-import { StoryAccordion } from './StoryAccordion';
+import * as palette from '../../style/Variables';
+import { HeadBar } from '../HeadBar';
+import { StoryData as data } from '../../data/StoryData';
+import { StoryAccordion } from '../StoryAccordion';
 import { Footer } from './Footer';
 
 export function Mystory() {
@@ -59,7 +59,6 @@ const StoryContainer = styled.div`
 const MainStory = styled.section`
   padding: 100px 64px;
   margin: 0 auto;
-  /* min-height: 100vh; */
 `;
 
 const StoryHeader = styled.div`

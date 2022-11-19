@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SVG } from '../icon/SVG';
+import { SVG } from '../../icon/SVG';
 import { motion } from 'framer-motion';
 import { HashLink } from 'react-router-hash-link';
-import * as palette from '../style/Variables';
-import { skillData as data } from '../data/SkillData';
+import * as palette from '../../style/Variables';
+import { skillData as data } from '../../data/SkillData';
 
 export function Skills() {
   return (

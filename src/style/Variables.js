@@ -7,9 +7,11 @@ export const salmonColor = '#D9C2B0';
 export const greenColor = '#A0A392';
 export const deeperWhite = '#f6f2f0';
 export const lightGray = 'rgba(0,0,0,0.1)';
+export const brownBlack = '#57534e';
 
 export const defaultShadow = '3px 3px 2px rgba(0,0,0,0.2)';
 export const defaultRadius = '10px';
+export const defaultHeader = '115px';
 
 export const githubColor = '#181717';
 export const velogColor = '#20C997';

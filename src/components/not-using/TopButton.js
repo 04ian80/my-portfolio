@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import * as palette from '../style/Variables';
+import * as palette from '../../style/Variables';
 import { CaretUp } from 'react-bootstrap-icons';
 import { motion } from 'framer-motion';
 import { HashLink as Link } from 'react-router-hash-link';

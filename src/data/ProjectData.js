@@ -1,19 +1,30 @@
 import musicApp from '../components/image/musicapp.png';
-import comingsoon from '../components/image/comingsoon.png';
-import sosang from '../components/image/sosang.png';
-// import dday from '../components/image/dday.png';
+import musteat from '../components/image/musteat.png';
 
 export const projectData = [
   {
     id: 1,
     category: '사이드 프로젝트',
-    name: '소상공간',
+    name: '머스트잇',
     type: '준비중',
-    skill: 'Next.js | TypeScript | Tailwind CSS | Notion | Git',
+    skill: 'Next.js | TypeScript | Tailwind CSS | zustand | Notion | Git',
     description:
-      '사람들이 소상공인 가게를 더 많이 이용할 수 있도록 사용자들끼리 추천하고, 음악 플레이리스트처럼 맛집을 공유하는 앱 웹.',
-    main: '',
-    img: sosang,
+      '자신만의 단골 맛집 리스트를 친구와 공유하고 기록으로 남기는 공간',
+    main: (
+      <>
+        <li>
+          <strong>next/auth</strong>를 사용하여 소셜 로그인 구현
+        </li>
+        <li>
+          접하기 쉬운 <strong>zustand</strong> 상태관리 툴로 작업 속도 향상
+        </li>
+        <li>
+          공통 UI 컴포넌트를 생성하여{' '}
+          <strong>코드 간소화 및 컴포넌트 재사용성</strong>을 높임
+        </li>
+      </>
+    ),
+    img: musteat,
     imgSize: {
       width: 240,
       height: 370,

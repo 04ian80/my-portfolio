@@ -1,9 +1,10 @@
 import React, { useReducer } from 'react';
 import { iconColorReducer, initIconColor } from '../store/HeadbarReducer';
-import { SVG } from '../icon/SVG';
-import { Telephone } from 'react-bootstrap-icons';
 import * as palette from '../style/Variables';
 import styled from 'styled-components';
+import { Github } from './svg/Github';
+import { Velog } from './svg/Velog';
+import { Gmail } from './svg/Gmail';
 
 export function Contact() {
   const [iconColor, setIconColor] = useReducer(iconColorReducer, initIconColor);
@@ -22,7 +23,7 @@ export function Contact() {
         }}
         aria-label='나의 깃허브'
       >
-        <SVG animate={false} name='github' color={iconColor.githubColor} />
+        <Github size='24' animate={true} color={iconColor.githubColor} />
       </a>
       <a
         href='https://velog.io/@a_in'
@@ -36,7 +37,7 @@ export function Contact() {
         }}
         aria-label='나의 벨로그'
       >
-        <SVG animate={false} name='velog' color={iconColor.velogColor} />
+        <Velog size='24' animate={true} color={iconColor.velogColor} />
       </a>
       <a
         href='mailto:artnouveau0804@gmail.com'
@@ -50,21 +51,12 @@ export function Contact() {
         }}
         aria-label='나의 지메일'
       >
-        <SVG animate={false} name='gmail' color={iconColor.gmailColor} />
-      </a>
-      <a
-        href='tel:010-9677-6912'
-        rel='noopener noreferrer'
-        target='_blank'
-        onMouseEnter={() => {
-          setIconColor({ type: 'TEL' });
-        }}
-        onMouseLeave={() => {
-          setIconColor({ type: 'DEFAULT' });
-        }}
-        aria-label='나의 지메일'
-      >
-        <Telephone width='34px' height='34px' color={iconColor.telColor} />
+        <Gmail
+          size='24'
+          animate={true}
+          name='gmail'
+          color={iconColor.gmailColor}
+        />
       </a>
     </ContactBox>
   );
@@ -73,7 +65,8 @@ export function Contact() {
 const ContactBox = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  align-items: center;
+  margin: 0 20px;
 
   & > *:not(:last-child) {
     padding-right: 15px;
