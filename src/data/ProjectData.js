@@ -16,7 +16,8 @@ export const projectData = [
           <strong>next/auth</strong>를 사용하여 소셜 로그인 구현
         </li>
         <li>
-          접하기 쉬운 <strong>zustand</strong> 상태관리 툴로 작업 속도 향상
+          프로젝트 규모에 맞도록 최소한의 코드로 접할 수 있는{' '}
+          <strong>zustand</strong> 전역상태관리
         </li>
         <li>
           공통 UI 컴포넌트를 생성하여{' '}

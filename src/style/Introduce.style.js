@@ -130,8 +130,6 @@ export const screenReadersOnly = styled.div`
 `;
 
 export const AboutMe = styled.div`
-  border-right: 1px solid gray;
-  border-left: 1px solid gray;
   padding: 10px;
 `;
 
