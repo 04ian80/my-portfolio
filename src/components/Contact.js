@@ -40,7 +40,7 @@ export function Contact() {
         <Velog size='24' animate={true} color={iconColor.velogColor} />
       </a>
       <a
-        href='mailto:artnouveau0804@gmail.com'
+        href='mailto:devain2211@gmail.com'
         rel='noopener noreferrer'
         target='_blank'
         onMouseEnter={() => {
